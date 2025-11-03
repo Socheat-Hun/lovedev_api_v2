@@ -1,0 +1,105 @@
+
+                  oo
+                 oooo
+                oooooo
+               oooooooo
+              oooooooooo
+             oooooooooooo
+           ooooooo  ooooooo
+          oooooo     ooooooo
+         oooooo       ooooooo
+        oooooo   o  o   oooooo
+       oooooo   oo  oo   oooooo
+     ooooooo  oooo  oooo  ooooooo
+    oooooo   ooooo  ooooo  ooooooo
+   oooooo   oooooo  oooooo  ooooooo
+  oooooooo      oo  oo      oooooooo
+  ooooooooooooo oo  oo ooooooooooooo
+      oooooooooooo  oooooooooooo
+          oooooooo  oooooooo
+              oooo  oooo
+
+     ________ ____  _  _____ _   _
+    |__  /_ _|  _ \| |/ /_ _| \ | |
+      / / | || |_) | ' / | ||  \| |
+     / /_ | ||  __/| . \ | || |\  |
+    |____|___|_|   |_|\_\___|_| \_|
+
+:: version 3.4.4 :: commit 18c1872 ::
+
+2025-11-03T21:55:29.660+09:00  WARN [/] 63254 --- [           main] i.m.p.PrometheusMeterRegistry            : A MeterFilter is being configured after a Meter has been registered to this registry. All MeterFilters should be configured before any Meters are registered. If that is not possible or you have a use case where it should be allowed, let the Micrometer maintainers know at https://github.com/micrometer-metrics/micrometer/issues/4920. Enable DEBUG level logging on this logger to see a stack trace of the call configuring this MeterFilter.
+2025-11-03T21:55:32.453+09:00  WARN [/] 63254 --- [           main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'armeriaServerGracefulShutdownLifecycle'
+2025-11-03T21:55:32.462+09:00  INFO [/] 63254 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-11-03T21:55:32.514+09:00 ERROR [/] 63254 --- [           main] o.s.b.SpringApplication                  : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'armeriaServerGracefulShutdownLifecycle'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:326) ~[spring-context-6.2.1.jar!/:6.2.1]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:510) ~[spring-context-6.2.1.jar!/:6.2.1]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:295) ~[spring-context-6.2.1.jar!/:6.2.1]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:240) ~[spring-context-6.2.1.jar!/:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:1006) ~[spring-context-6.2.1.jar!/:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:630) ~[spring-context-6.2.1.jar!/:6.2.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.4.1.jar!/:3.4.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.4.1.jar!/:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.4.1.jar!/:3.4.1]
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:149) [spring-boot-3.4.1.jar!/:3.4.1]
+	at zipkin.server.ZipkinServer.main(ZipkinServer.java:47) [!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) [zipkin-server-3.4.4-exec.jar:?]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) [zipkin-server-3.4.4-exec.jar:?]
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) [zipkin-server-3.4.4-exec.jar:?]
+Caused by: java.util.concurrent.CompletionException: java.lang.IllegalStateException: Armeria server failed to start
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:936) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194) ~[?:?]
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.doCompleteExceptionally(UnmodifiableFuture.java:179) ~[armeria-1.31.3.jar!/:?]
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.lambda$wrap$0(UnmodifiableFuture.java:113) ~[armeria-1.31.3.jar!/:?]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179) ~[?:?]
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.doComplete(UnmodifiableFuture.java:164) ~[armeria-1.31.3.jar!/:?]
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.lambda$wrap$0(UnmodifiableFuture.java:115) ~[armeria-1.31.3.jar!/:?]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+Caused by: java.lang.IllegalStateException: Armeria server failed to start
+	at com.linecorp.armeria.spring.ArmeriaServerGracefulShutdownLifecycle.lambda$start$0(ArmeriaServerGracefulShutdownLifecycle.java:49) ~[armeria-spring-boot3-autoconfigure-1.31.3.jar!/:?]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194) ~[?:?]
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.doCompleteExceptionally(UnmodifiableFuture.java:179) ~[armeria-1.31.3.jar!/:?]
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.lambda$wrap$0(UnmodifiableFuture.java:113) ~[armeria-1.31.3.jar!/:?]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179) ~[?:?]
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.doComplete(UnmodifiableFuture.java:164) ~[armeria-1.31.3.jar!/:?]
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.lambda$wrap$0(UnmodifiableFuture.java:115) ~[armeria-1.31.3.jar!/:?]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.116.Final.jar!/:4.1.116.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+Caused by: io.netty.channel.unix.Errors$NativeIoException: bind(..) failed: Address already in use
+
