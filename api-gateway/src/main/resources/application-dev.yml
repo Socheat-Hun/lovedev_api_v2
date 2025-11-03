@@ -1,6 +1,6 @@
 spring:
   config:
-    import: optional:file:.env[.properties],optional:file:.env.local[.properties]
+    import: optional:file:.env.local[.properties]
 
   cloud:
     gateway:
@@ -13,6 +13,14 @@ spring:
           filters:
             - StripPrefix=0
 
+        # User Service Swagger/OpenAPI docs
+        - id: user-service-swagger
+          uri: ${USER_SERVICE_URL:http://localhost:8081}
+          predicates:
+            - Path=/user-service/v3/api-docs/**
+          filters:
+            - RewritePath=/user-service/v3/api-docs, /v3/api-docs
+
         # Notification Service Routes
         - id: notification-service
           uri: ${NOTIFICATION_SERVICE_URL:http://localhost:8083}
@@ -20,6 +28,14 @@ spring:
             - Path=/api/notifications/**, /api/notification-settings/**, /api/fcm/**
           filters:
             - StripPrefix=0
+
+        # Notification Service Swagger/OpenAPI docs
+        - id: notification-service-swagger
+          uri: ${NOTIFICATION_SERVICE_URL:http://localhost:8083}
+          predicates:
+            - Path=/notification-service/v3/api-docs/**
+          filters:
+            - RewritePath=/notification-service/v3/api-docs, /v3/api-docs
 
         # Email Service Routes
         - id: email-service
@@ -29,6 +45,14 @@ spring:
           filters:
             - StripPrefix=0
 
+        # Email Service Swagger/OpenAPI docs
+        - id: email-service-swagger
+          uri: ${EMAIL_SERVICE_URL:http://localhost:8082}
+          predicates:
+            - Path=/email-service/v3/api-docs/**
+          filters:
+            - RewritePath=/email-service/v3/api-docs, /v3/api-docs
+
         # Business Service Routes
         - id: business-service
           uri: ${BUSINESS_SERVICE_URL:http://localhost:8084}
@@ -36,7 +60,15 @@ spring:
             - Path=/api/business/**
           filters:
             - StripPrefix=0
-      
+
+        # Business Service Swagger/OpenAPI docs
+        - id: business-service-swagger
+          uri: ${BUSINESS_SERVICE_URL:http://localhost:8084}
+          predicates:
+            - Path=/business-service/v3/api-docs/**
+          filters:
+            - RewritePath=/business-service/v3/api-docs, /v3/api-docs
+
       # Global CORS Configuration
       globalcors:
         cors-configurations:
@@ -62,23 +94,28 @@ eureka:
   instance:
     prefer-ip-address: true
 
+# Swagger UI Configuration for Gateway
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+    # Use relative paths - let gateway handle routing
     urls:
       - name: User Service
-        url: ${USER_SERVICE_URL:http://localhost:8081}/v3/api-docs
+        url: /user-service/v3/api-docs
       - name: Notification Service
-        url: ${NOTIFICATION_SERVICE_URL:http://localhost:8083}/v3/api-docs
+        url: /notification-service/v3/api-docs
       - name: Email Service
-        url: ${EMAIL_SERVICE_URL:http://localhost:8082}/v3/api-docs
+        url: /email-service/v3/api-docs
+      - name: Business Service
+        url: /business-service/v3/api-docs
+    # Set default service to show
+    urls-primary-name: User Service
   api-docs:
     enabled: true
     path: /v3/api-docs
 
 server:
   port: 8080
-
 
 management:
   endpoints:

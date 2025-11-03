@@ -1,14 +1,19 @@
 spring:
   config:
-    import: optional:file:.env[.properties],optional:file:.env.local[.properties]
+    import: optional:file:.env.local[.properties]
 
+  # Database Configuration - All from .env.local
   datasource:
-    url: ${NOTIFICATION_DATABASE_URL}
-    username: ${NOTIFICATION_DATABASE_USERNAME}
-    password: ${NOTIFICATION_DATABASE_PASSWORD}
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME_USER:lovedev_user_db_dev}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
       minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
 
   jpa:
     hibernate:

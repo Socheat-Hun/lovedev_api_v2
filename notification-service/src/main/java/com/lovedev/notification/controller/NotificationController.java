@@ -45,12 +45,12 @@ public class NotificationController {
         return ResponseEntity.ok(ApiResponse.success(response));
     }
 
-    @Operation(summary = "Get notification statistics", description = "Get notification counts (unread, read, total)")
-    @GetMapping("/stats")
-    public ResponseEntity<ApiResponse<Map<String, Long>>> getNotificationStats() {
-        Map<String, Long> stats = fcmService.getNotificationStats();
-        return ResponseEntity.ok(ApiResponse.success(stats));
-    }
+//    @Operation(summary = "Get notification statistics", description = "Get notification counts (unread, read, total)")
+//    @GetMapping("/stats")
+//    public ResponseEntity<ApiResponse<Map<String, Long>>> getNotificationStats() {
+//        Map<String, Long> stats = fcmService.getNotificationStats();
+//        return ResponseEntity.ok(ApiResponse.success(stats));
+//    }
 
     @Operation(summary = "Mark notification as read", description = "Mark a specific notification as read")
     @PutMapping("/{id}/read")
@@ -121,21 +121,21 @@ public class NotificationController {
     // Admin Endpoints
     // ============================================
 
-    @Operation(summary = "Send notification to user", description = "Send notification to specific user (Admin only)")
-    @PostMapping("/send")
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<ApiResponse<Void>> sendNotificationToUser(@Valid @RequestBody SendNotificationRequest request) {
-        fcmService.sendNotificationToUser(request);
-        return ResponseEntity.ok(ApiResponse.success("Notification sent successfully", null));
-    }
+//    @Operation(summary = "Send notification to user", description = "Send notification to specific user (Admin only)")
+//    @PostMapping("/send")
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public ResponseEntity<ApiResponse<Void>> sendNotificationToUser(@Valid @RequestBody SendNotificationRequest request) {
+//        fcmService.sendNotificationToUser(request);
+//        return ResponseEntity.ok(ApiResponse.success("Notification sent successfully", null));
+//    }
 
-    @Operation(summary = "Send notification to all users", description = "Send notification to all users (Admin only)")
-    @PostMapping("/broadcast")
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<ApiResponse<Void>> sendNotificationToAllUsers(@Valid @RequestBody SendBulkNotificationRequest request) {
-        fcmService.sendNotificationToAllUsers(request);
-        return ResponseEntity.ok(ApiResponse.success("Notification broadcast initiated", null));
-    }
+//    @Operation(summary = "Send notification to all users", description = "Send notification to all users (Admin only)")
+//    @PostMapping("/broadcast")
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public ResponseEntity<ApiResponse<Void>> sendNotificationToAllUsers(@Valid @RequestBody SendBulkNotificationRequest request) {
+//        fcmService.sendNotificationToAllUsers(request);
+//        return ResponseEntity.ok(ApiResponse.success("Notification broadcast initiated", null));
+//    }
 
     // ============================================
     // Test Endpoints (Admin only)
