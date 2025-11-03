@@ -1,0 +1,402 @@
+# Development Profile
+spring:
+  config:
+    activate:
+      on-profile: dev
+    import: optional:file:.env.local[.properties]
+  cloud:
+    config:
+      enabled: false
+
+  # Database Configuration - All from .env.local
+  datasource:
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME_USER:lovedev_user_db_dev}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_HIBERNATE_DDL_AUTO:validate}
+    show-sql: ${JPA_SHOW_SQL:false}
+    properties:
+      hibernate:
+        dialect: ${JPA_DATABASE_PLATFORM:org.hibernate.dialect.PostgreSQLDialect}
+        format_sql: false
+        use_sql_comments: false
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    validate-on-migrate: true
+
+  # Redis Configuration - All from .env.local
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+#      password: ${REDIS_PASSWORD:}
+#      timeout: ${REDIS_TIMEOUT:60000}
+#      lettuce:
+#        pool:
+#          max-active: ${REDIS_LETTUCE_POOL_MAX_ACTIVE:8}
+#          max-idle: ${REDIS_LETTUCE_POOL_MAX_IDLE:8}
+#          min-idle: ${REDIS_LETTUCE_POOL_MIN_IDLE:0}
+#          max-wait: -1ms
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - openid
+              - email
+              - profile
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            client-name: Google
+
+          github:
+            client-id: ${GITHUB_CLIENT_ID}
+            client-secret: ${GITHUB_CLIENT_SECRET}
+            scope:
+              - user:email
+              - read:user
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            client-name: GitHub
+
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub
+
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: id
+
+  # Kafka Configuration - All from .env.local
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      retries: 3
+      properties:
+        linger.ms: 10
+        batch.size: 16384
+        max.in.flight.requests.per.connection: 5
+        enable.idempotence: true
+    consumer:
+      group-id: ${KAFKA_CONSUMER_GROUP_ID:lovedev-consumer-group-dev}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: ${KAFKA_AUTO_OFFSET_RESET:earliest}
+      enable-auto-commit: ${KAFKA_ENABLE_AUTO_COMMIT:false}
+      properties:
+        spring.json.trusted.packages: "*"
+    listener:
+      ack-mode: manual
+
+# Server Configuration - From .env.local
+server:
+  port: ${USER_SERVICE_PORT:8081}
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param
+    include-exception: false
+  compression:
+    enabled: ${SERVER_COMPRESSION_ENABLED:false}
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  http2:
+    enabled: ${SERVER_HTTP2_ENABLED:false}
+  app:
+    base-url-api: ${BASE_URL_API}
+    base-url-web: ${BASE_URL_WEB}
+
+# Eureka Client Configuration - From .env.local
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_SERVER_HOST:localhost}:${EUREKA_SERVER_PORT:8761}/eureka/
+    register-with-eureka: ${EUREKA_CLIENT_REGISTER_WITH_EUREKA:true}
+    fetch-registry: ${EUREKA_CLIENT_FETCH_REGISTRY:true}
+    registry-fetch-interval-seconds: 30
+    healthcheck:
+      enabled: true
+  instance:
+    prefer-ip-address: ${EUREKA_INSTANCE_PREFER_IP:false}
+    hostname: ${EUREKA_INSTANCE_HOSTNAME:localhost}
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+    metadata-map:
+      version: ${SERVER_APP_VERSION:1.0.0-DEV}
+      team: lovedev
+
+# Feign Client Configuration - From .env.local
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: ${FEIGN_CLIENT_CONNECT_TIMEOUT:5000}
+        readTimeout: ${FEIGN_CLIENT_READ_TIMEOUT:10000}
+        loggerLevel: full
+  circuitbreaker:
+    enabled: true
+    alphanumeric-ids:
+      enabled: true
+  compression:
+    request:
+      enabled: ${FEIGN_COMPRESSION_REQUEST_ENABLED:false}
+    response:
+      enabled: ${FEIGN_COMPRESSION_RESPONSE_ENABLED:false}
+  hystrix:
+    enabled: ${FEIGN_HYSTRIX_ENABLED:true}
+
+# Resilience4j Configuration - From .env.local
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        slidingWindowSize: ${RESILIENCE4J_CIRCUITBREAKER_SLIDING_WINDOW_SIZE:5}
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: ${RESILIENCE4J_CIRCUITBREAKER_WAIT_DURATION_IN_OPEN_STATE:5000}
+        failureRateThreshold: ${RESILIENCE4J_CIRCUITBREAKER_FAILURE_RATE_THRESHOLD:50}
+        eventConsumerBufferSize: 10
+        recordExceptions:
+          - org.springframework.web.client.HttpServerErrorException
+          - java.util.concurrent.TimeoutException
+          - java.io.IOException
+    instances:
+      notificationService:
+        baseConfig: default
+      emailService:
+        baseConfig: default
+      businessService:
+        baseConfig: default
+
+  retry:
+    configs:
+      default:
+        maxAttempts: ${RESILIENCE4J_RETRY_MAX_ATTEMPTS:2}
+        waitDuration: ${RESILIENCE4J_RETRY_WAIT_DURATION:500}
+        retryExceptions:
+          - org.springframework.web.client.HttpServerErrorException
+          - java.util.concurrent.TimeoutException
+          - java.io.IOException
+    instances:
+      notificationService:
+        baseConfig: default
+      emailService:
+        baseConfig: default
+
+  ratelimiter:
+    configs:
+      default:
+        registerHealthIndicator: true
+        limitForPeriod: ${RATE_LIMIT_REQUESTS_PER_SECOND:1000}
+        limitRefreshPeriod: 1s
+        timeoutDuration: 0s
+    instances:
+      userService:
+        baseConfig: default
+
+# Management & Monitoring - From .env.local
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ${MANAGEMENT_ENDPOINTS_WEB_EXPOSURE:*}
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: ${MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS:always}
+      probes:
+        enabled: true
+  health:
+    circuitbreakers:
+      enabled: true
+    ratelimiters:
+      enabled: true
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+  tracing:
+    sampling:
+      probability: ${SLEUTH_SAMPLER_PROBABILITY:1.0}
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_BASE_URL:http://localhost:9411}/api/v2/spans
+    service:
+      name: user-service
+  prometheus:
+    metrics:
+      export:
+        enabled: ${MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED:true}
+
+# Logging Configuration with COLORS - From .env.local
+logging:
+  level:
+    root: ${LOGGING_LEVEL_ROOT:INFO}
+    #com.lovedev: ${LOGGING_LEVEL_COM_LOVEDEV:DEBUG}
+    org.springframework.web: ${LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_WEB:DEBUG}
+    #org.springframework.security: DEBUG
+    #org.hibernate: ${LOGGING_LEVEL_ORG_HIBERNATE:DEBUG}
+    #org.hibernate.SQL: DEBUG
+    #org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.kafka: INFO
+    org.springframework.cloud.openfeign: INFO
+    org.springframework.boot.autoconfigure.logging: WARN
+    com.netflix.discovery: WARN
+  pattern:
+    # Colored console output with trace info
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([${spring.application.name:}]){magenta} %clr([%X{traceId:-},%X{spanId:-}]){yellow} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
+    # File output without colors
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%X{traceId:-},%X{spanId:-}] - %msg%n"
+  file:
+    name: ${LOGGING_FILE_NAME:logs/user-service-dev.log}
+    max-size: ${LOGGING_FILE_MAX_SIZE:10MB}
+    max-history: ${LOGGING_FILE_MAX_HISTORY:7}
+
+# Application Configuration - All from .env.local
+app:
+  name: ${SERVER_APP_NAME:LoveDev Platform (Dev)}
+  version: ${SERVER_APP_VERSION:1.0.0-DEV}
+  base-url-web: ${SERVER_APP_BASE_URL_WEB:http://localhost:3000}
+  base-url-api: ${SERVER_APP_BASE_URL_API:http://localhost:8080}
+  support-email: ${SERVER_APP_SUPPORT_EMAIL:dev@lovedev.local}
+
+  jwt:
+    secret: ${JWT_SECRET:dev_jwt_secret_key_for_testing_only_not_for_production_use_minimum_256_bits_required}
+    expiration: ${JWT_EXPIRATION:86400000}
+    refresh-expiration: ${JWT_REFRESH_EXPIRATION:604800000}
+    issuer: ${JWT_ISSUER:lovedev-platform-dev}
+    header: ${JWT_HEADER:Authorization}
+    prefix: ${JWT_PREFIX:Bearer }
+
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:4200,http://localhost:8080}
+    allowed-methods: ${CORS_ALLOWED_METHODS:GET,POST,PUT,DELETE,PATCH,OPTIONS}
+    allowed-headers: ${CORS_ALLOWED_HEADERS:*}
+    allow-credentials: ${CORS_ALLOW_CREDENTIALS:true}
+    max-age: ${CORS_MAX_AGE:3600}
+
+  oauth2:
+    google:
+      client-id: ${OAUTH2_GOOGLE_CLIENT_ID:your-dev-google-client-id}
+      client-secret: ${OAUTH2_GOOGLE_CLIENT_SECRET:your-dev-google-client-secret}
+      redirect-uri: ${OAUTH2_GOOGLE_REDIRECT_URI:http://localhost:8080/login/oauth2/code/google}
+      scope: ${OAUTH2_GOOGLE_SCOPE:profile,email}
+    facebook:
+      client-id: ${OAUTH2_FACEBOOK_CLIENT_ID:your-dev-facebook-app-id}
+      client-secret: ${OAUTH2_FACEBOOK_CLIENT_SECRET:your-dev-facebook-app-secret}
+      redirect-uri: ${OAUTH2_FACEBOOK_REDIRECT_URI:http://localhost:8080/login/oauth2/code/facebook}
+      scope: ${OAUTH2_FACEBOOK_SCOPE:email,public_profile}
+
+    redirect-uri: ${OAUTH2_REDIRECT_URI}
+
+
+  file:
+    upload-dir: ${FILE_UPLOAD_LOCATION:./uploads}
+    max-size: ${FILE_UPLOAD_MAX_SIZE:10MB}
+    max-request-size: ${FILE_UPLOAD_MAX_REQUEST_SIZE:10MB}
+    allowed-extensions: ${FILE_ALLOWED_EXTENSIONS:jpg,jpeg,png,gif,pdf,doc,docx}
+
+  firebase:
+    credentials-path: ${FIREBASE_CREDENTIALS_PATH:src/main/resources/firebase-service-account-dev.json}
+    project-id: ${FIREBASE_PROJECT_ID:lovedev-dev}
+    database-url: ${FIREBASE_DATABASE_URL:https://lovedev-dev.firebaseio.com}
+
+  email:
+    verification:
+      token-expiry: ${EMAIL_VERIFICATION_TOKEN_EXPIRY:86400}
+    template:
+      verification-subject: ${EMAIL_TEMPLATE_VERIFICATION_SUBJECT:Verify Your Email - LoveDev Dev}
+      welcome-subject: ${EMAIL_TEMPLATE_WELCOME_SUBJECT:Welcome to LoveDev Platform Dev}
+      password-reset-subject: ${EMAIL_TEMPLATE_PASSWORD_RESET_SUBJECT:Reset Your Password - LoveDev Dev}
+
+  cache:
+    type: ${CACHE_TYPE:redis}
+    ttl-seconds: ${CACHE_TTL_SECONDS:300}
+    user-profile-ttl: ${CACHE_USER_PROFILE_TTL:60}
+
+  async:
+    core-pool-size: ${ASYNC_CORE_POOL_SIZE:2}
+    max-pool-size: ${ASYNC_MAX_POOL_SIZE:5}
+    queue-capacity: ${ASYNC_QUEUE_CAPACITY:50}
+    thread-name-prefix: ${ASYNC_THREAD_NAME_PREFIX:async-dev-}
+
+  security:
+    enable-csrf: ${SECURITY_ENABLE_CSRF:false}
+    enable-frame-options: ${SECURITY_ENABLE_FRAME_OPTIONS:false}
+    session-creation-policy: ${SECURITY_SESSION_CREATION_POLICY:STATELESS}
+    password:
+      encoder: ${SECURITY_PASSWORD_ENCODER:bcrypt}
+      strength: ${SECURITY_PASSWORD_STRENGTH:4}
+
+# Kafka Topics - From .env.local
+kafka:
+  topics:
+    user-events: ${KAFKA_TOPIC_USER_EVENTS:user-events-dev}
+    notification-events: ${KAFKA_TOPIC_NOTIFICATION_EVENTS:notification-events-dev}
+    email-events: ${KAFKA_TOPIC_EMAIL_EVENTS:email-events-dev}
+    business-events: ${KAFKA_TOPIC_BUSINESS_EVENTS:business-events-dev}
+
+# Springdoc OpenAPI Configuration - From .env.local
+springdoc:
+  api-docs:
+    enabled: ${SWAGGER_ENABLED:true}
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: ${SWAGGER_ENABLED:true}
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+  show-actuator: true
+  info:
+    title: ${SWAGGER_TITLE:User Service API (Dev)}
+    description: ${SWAGGER_DESCRIPTION:Development API Documentation for User Service}
+    version: ${SWAGGER_VERSION:1.0.0-DEV}
+    contact:
+      name: ${SWAGGER_CONTACT_NAME:LoveDev Dev Team}
+      email: ${SWAGGER_CONTACT_EMAIL:dev@lovedev.local}
+    license:
+      name: ${SWAGGER_LICENSE:Apache 2.0}
+      url: ${SWAGGER_LICENSE_URL:https://www.apache.org/licenses/LICENSE-2.0}
+
+# Debug Options (Development Only)
+debug: ${DEBUG:true}
+spring.devtools:
+  restart:
+    enabled: ${SPRING_DEVTOOLS_RESTART_ENABLED:true}
+  livereload:
+    enabled: ${SPRING_DEVTOOLS_LIVERELOAD_ENABLED:true}

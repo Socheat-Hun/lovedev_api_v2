@@ -1,0 +1,46 @@
+spring:
+  config:
+    import: optional:file:.env[.properties],optional:file:.env.local[.properties]
+
+  mail:
+    default-encoding: UTF-8
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: ${MAIL_AUTH:true}
+          starttls:
+            enable: ${MAIL_ENABLE:true}
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+app:
+  email:
+    from: ${EMAIL_FROM}
+    from-name: ${EMAIL_FROM_NAME}
+    enabled: ${EMAIL_ENABLED:true}
+    verification-url: ${EMAIL_VERIFICATION_URL}
+    reset-password-url: ${EMAIL_RESET_PASSWORD_URL}
+  
+  jwt:
+    secret: ${JWT_SECRET}
+
+logging:
+  level:
+    root: INFO
+    com.lovedev.email: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

@@ -1,0 +1,50 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: business-service
+  
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:business_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+user-service:
+  url: ${USER_SERVICE_URL:http://localhost:8081}
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+# Service URLs for inter-service communication
+services:
+  user-service:
+    url: ${USER_SERVICE_URL:http://localhost:8081}
+  notification-service:
+    url: ${NOTIFICATION_SERVICE_URL:http://localhost:8083}
+  email-service:
+    url: ${EMAIL_SERVICE_URL:http://localhost:8084}

@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: user-service
+  
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+# Production Profile
+#spring:
+#  config:
+#    activate:
+#      on-profile: prod
+#
+#  datasource:
+#    url: ${DATABASE_URL:jdbc:postgresql://postgres:5432/lovedev_db}
+#    username: ${DATABASE_USERNAME:postgres}
+#    password: ${DATABASE_PASSWORD:postgres}
+#    hikari:
+#      maximum-pool-size: 20
+#      minimum-idle: 10
+#
+#  jpa:
+#    show-sql: false
+#    properties:
+#      hibernate:
+#        format_sql: false
+#
+#  data:
+#    redis:
+#      host: ${REDIS_HOST:redis}
+#      port: ${REDIS_PORT:6379}
+#
+#  kafka:
+#    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
+#
+#server:
+#  port: 8081
+#  error:
+#    include-stacktrace: never
+#    include-exception: false
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: ${EUREKA_SERVER_URL:http://eureka-server:8761/eureka/}
+#
+#management:
+#  zipkin:
+#    tracing:
+#      endpoint: ${ZIPKIN_URL:http://zipkin:9411/api/v2/spans}
+#
+#logging:
+#  level:
+#    root: INFO
+#    com.lovedev.user: INFO
+#    org.springframework.web: INFO
+#    org.springframework.security: WARN
+#    org.hibernate.SQL: WARN
+#  file:
+#    name: /var/log/user-service/application.log
