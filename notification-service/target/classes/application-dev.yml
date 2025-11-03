@@ -41,10 +41,10 @@ app:
 logging:
   level:
     root: INFO
-    com.lovedev.notification: DEBUG
-    org.springframework.web: DEBUG
-    org.springframework.security: DEBUG
-    org.hibernate.SQL: DEBUG
+    com.lovedev.notification: DEBUG  # Your code - keep DEBUG
+    org.springframework.web: INFO           # Changed from DEBUG
+    org.springframework.security: INFO      # Changed from DEBUG
+    org.springframework.boot: INFO
 
 management:
   endpoints:
