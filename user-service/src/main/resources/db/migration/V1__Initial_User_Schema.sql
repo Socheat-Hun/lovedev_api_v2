@@ -320,7 +320,7 @@ INSERT INTO users (
 INSERT INTO user_roles (user_id, role_id)
 SELECT u.id, r.id
 FROM users u, roles r
-WHERE u.email = 'admin@lovedev.com'
+WHERE u.email = 'admin@lovedev.me'
   AND r.name = 'ROLE_ADMIN';
 
 -- ============================================
