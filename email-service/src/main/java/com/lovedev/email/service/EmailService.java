@@ -617,36 +617,4 @@ public class EmailService {
 
         sendEmail(to, subject, htmlContent);
     }
-
-    private String buildVerificationEmailBody(String name, String token) {
-        return String.format("""
-            <html>
-            <body>
-                <h2>Hello %s,</h2>
-                <p>Thank you for registering with LoveDev!</p>
-                <p>Please click the link below to verify your email address:</p>
-                <a href="http://localhost:8080/api/auth/verify?token=%s">Verify Email</a>
-                <p>If you didn't create this account, please ignore this email.</p>
-                <br>
-                <p>Best regards,<br>LoveDev Team</p>
-            </body>
-            </html>
-            """, name, token);
-    }
-
-    private String buildPasswordResetEmailBody(String name, String token) {
-        return String.format("""
-            <html>
-            <body>
-                <h2>Hello %s,</h2>
-                <p>We received a request to reset your password.</p>
-                <p>Please click the link below to reset your password:</p>
-                <a href="http://localhost:8080/api/auth/reset-password?token=%s">Reset Password</a>
-                <p>If you didn't request this, please ignore this email.</p>
-                <br>
-                <p>Best regards,<br>LoveDev Team</p>
-            </body>
-            </html>
-            """, name, token);
-    }
 }

@@ -539,3 +539,548 @@
 2025-11-09 11:36:11.474 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
 2025-11-09 11:36:11.475 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@3487e738] as "application/json"
 2025-11-09 11:36:11.489 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:36:40.752 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:36:40.753 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe38888b97ff1fe07be47efde19e,1fe07be47efde19e] - Accept=[application/json, application/*+json]
+2025-11-09 11:36:40.758 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe38888b97ff1fe07be47efde19e,1fe07be47efde19e] - Response 200 OK
+2025-11-09 11:36:40.758 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe38888b97ff1fe07be47efde19e,1fe07be47efde19e] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:36:41.270 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:36:41.270 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe39e8ed2b953b38c265a3e3afb5,3b38c265a3e3afb5] - Accept=[application/json, application/*+json]
+2025-11-09 11:36:41.274 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe39e8ed2b953b38c265a3e3afb5,3b38c265a3e3afb5] - Response 200 OK
+2025-11-09 11:36:41.547 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:36:41.547 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:36:41.547 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@52e7a8ac] as "application/json"
+2025-11-09 11:36:41.555 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:37:10.765 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:37:10.766 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe56b18736bb4bb9c818a192d073,4bb9c818a192d073] - Accept=[application/json, application/*+json]
+2025-11-09 11:37:10.771 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe56b18736bb4bb9c818a192d073,4bb9c818a192d073] - Response 200 OK
+2025-11-09 11:37:10.771 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe56b18736bb4bb9c818a192d073,4bb9c818a192d073] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:37:11.276 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:37:11.277 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe57e95248298f87006d7c0e19f7,8f87006d7c0e19f7] - Accept=[application/json, application/*+json]
+2025-11-09 11:37:11.283 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe57e95248298f87006d7c0e19f7,8f87006d7c0e19f7] - Response 200 OK
+2025-11-09 11:37:11.605 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:37:11.606 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:37:11.606 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@182ebb67] as "application/json"
+2025-11-09 11:37:11.615 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:37:40.788 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:37:40.798 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe740bfa48140eaee19522462b94,0eaee19522462b94] - Accept=[application/json, application/*+json]
+2025-11-09 11:37:40.812 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe740bfa48140eaee19522462b94,0eaee19522462b94] - Response 200 OK
+2025-11-09 11:37:40.817 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe740bfa48140eaee19522462b94,0eaee19522462b94] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:37:41.289 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:37:41.290 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe75b9af60f11ef88880b7cb9b96,1ef88880b7cb9b96] - Accept=[application/json, application/*+json]
+2025-11-09 11:37:41.295 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe75b9af60f11ef88880b7cb9b96,1ef88880b7cb9b96] - Response 200 OK
+2025-11-09 11:37:41.683 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:37:41.685 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:37:41.686 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@5cb7fc42] as "application/json"
+2025-11-09 11:37:41.722 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:38:10.829 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:38:10.832 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe9260354a974fcf072c1e882523,4fcf072c1e882523] - Accept=[application/json, application/*+json]
+2025-11-09 11:38:10.835 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe9260354a974fcf072c1e882523,4fcf072c1e882523] - Response 200 OK
+2025-11-09 11:38:10.836 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe9260354a974fcf072c1e882523,4fcf072c1e882523] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:38:11.298 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:38:11.300 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe933427e58aac5bf5b34f2cae11,ac5bf5b34f2cae11] - Accept=[application/json, application/*+json]
+2025-11-09 11:38:11.304 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffe933427e58aac5bf5b34f2cae11,ac5bf5b34f2cae11] - Response 200 OK
+2025-11-09 11:38:11.788 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:38:11.789 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:38:11.789 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@57827ecb] as "application/json"
+2025-11-09 11:38:11.810 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:38:40.839 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:38:40.841 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffeb04c995e5a1e25d6531e4b47a7,1e25d6531e4b47a7] - Accept=[application/json, application/*+json]
+2025-11-09 11:38:40.845 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffeb04c995e5a1e25d6531e4b47a7,1e25d6531e4b47a7] - Response 200 OK
+2025-11-09 11:38:40.846 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffeb04c995e5a1e25d6531e4b47a7,1e25d6531e4b47a7] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:38:40.879 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:38:40.881 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:38:40.881 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@384f1e5f] as "application/json"
+2025-11-09 11:38:40.892 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:38:41.309 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:38:41.310 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffeb1796dd1d7a590373bcfc962d3,a590373bcfc962d3] - Accept=[application/json, application/*+json]
+2025-11-09 11:38:41.314 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffeb1796dd1d7a590373bcfc962d3,a590373bcfc962d3] - Response 200 OK
+2025-11-09 11:38:41.892 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:38:41.893 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:38:41.893 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@55576fb2] as "application/json"
+2025-11-09 11:38:41.988 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:39:10.851 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:39:10.854 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffece0f00eafefddd09ace79eb225,fddd09ace79eb225] - Accept=[application/json, application/*+json]
+2025-11-09 11:39:10.859 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffece0f00eafefddd09ace79eb225,fddd09ace79eb225] - Response 200 OK
+2025-11-09 11:39:10.859 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffece0f00eafefddd09ace79eb225,fddd09ace79eb225] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:39:11.042 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:39:11.043 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:39:11.043 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@3661ccb6] as "application/json"
+2025-11-09 11:39:11.082 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:39:11.319 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:39:11.320 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffecf8b1e3e98550a73d8aeda1094,550a73d8aeda1094] - Accept=[application/json, application/*+json]
+2025-11-09 11:39:11.329 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffecf8b1e3e98550a73d8aeda1094,550a73d8aeda1094] - Response 200 OK
+2025-11-09 11:39:12.083 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:39:12.084 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:39:12.084 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@72518897] as "application/json"
+2025-11-09 11:39:12.101 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:39:40.865 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:39:40.865 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffeec10df07147850acc7886192f3,7850acc7886192f3] - Accept=[application/json, application/*+json]
+2025-11-09 11:39:40.874 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffeec10df07147850acc7886192f3,7850acc7886192f3] - Response 200 OK
+2025-11-09 11:39:40.876 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffeec10df07147850acc7886192f3,7850acc7886192f3] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:39:41.161 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:39:41.162 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:39:41.162 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@32accd64] as "application/json"
+2025-11-09 11:39:41.184 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:39:41.332 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:39:41.335 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffeed7899424f5974146a8b982054,5974146a8b982054] - Accept=[application/json, application/*+json]
+2025-11-09 11:39:41.344 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffeed7899424f5974146a8b982054,5974146a8b982054] - Response 200 OK
+2025-11-09 11:39:42.190 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:39:42.191 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:39:42.191 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@5ce80e7c] as "application/json"
+2025-11-09 11:39:42.263 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:40:10.881 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:40:10.884 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff0a52a31c0671459053742869c2,71459053742869c2] - Accept=[application/json, application/*+json]
+2025-11-09 11:40:10.887 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff0a52a31c0671459053742869c2,71459053742869c2] - Response 200 OK
+2025-11-09 11:40:10.887 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff0a52a31c0671459053742869c2,71459053742869c2] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:40:11.325 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:40:11.325 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:40:11.326 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@64546d2b] as "application/json"
+2025-11-09 11:40:11.340 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:40:11.357 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:40:11.359 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff0bc65403ca6169284f6ce7457f,6169284f6ce7457f] - Accept=[application/json, application/*+json]
+2025-11-09 11:40:11.365 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff0bc65403ca6169284f6ce7457f,6169284f6ce7457f] - Response 200 OK
+2025-11-09 11:40:12.341 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:40:12.341 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:40:12.341 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@1a3f4406] as "application/json"
+2025-11-09 11:40:12.347 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:40:40.893 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:40:40.897 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff281cfd19ef5a5c1875682f1f88,5a5c1875682f1f88] - Accept=[application/json, application/*+json]
+2025-11-09 11:40:40.902 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff281cfd19ef5a5c1875682f1f88,5a5c1875682f1f88] - Response 200 OK
+2025-11-09 11:40:40.903 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff281cfd19ef5a5c1875682f1f88,5a5c1875682f1f88] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:40:41.371 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:40:41.373 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff299e0451ba97ca39920d2ad49f,97ca39920d2ad49f] - Accept=[application/json, application/*+json]
+2025-11-09 11:40:41.381 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff299e0451ba97ca39920d2ad49f,97ca39920d2ad49f] - Response 200 OK
+2025-11-09 11:40:41.409 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:40:41.409 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:40:41.410 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@4e2c6dc8] as "application/json"
+2025-11-09 11:40:41.482 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:41:10.918 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:41:10.928 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff46bbeff68f377341b9c04a93ac,377341b9c04a93ac] - Accept=[application/json, application/*+json]
+2025-11-09 11:41:10.941 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff46bbeff68f377341b9c04a93ac,377341b9c04a93ac] - Response 200 OK
+2025-11-09 11:41:10.942 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff46bbeff68f377341b9c04a93ac,377341b9c04a93ac] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:41:11.389 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:41:11.392 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff47c1d3eb3b8664172788dec442,8664172788dec442] - Accept=[application/json, application/*+json]
+2025-11-09 11:41:11.398 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff47c1d3eb3b8664172788dec442,8664172788dec442] - Response 200 OK
+2025-11-09 11:41:11.533 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:41:11.537 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:41:11.538 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@522b019f] as "application/json"
+2025-11-09 11:41:11.594 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:41:40.954 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:41:40.955 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff64afc6501df86a0ef04f4f5882,f86a0ef04f4f5882] - Accept=[application/json, application/*+json]
+2025-11-09 11:41:40.964 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff64afc6501df86a0ef04f4f5882,f86a0ef04f4f5882] - Response 200 OK
+2025-11-09 11:41:40.966 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff64afc6501df86a0ef04f4f5882,f86a0ef04f4f5882] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:41:41.406 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:41:41.407 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff65f2e115409972a21c74fe6a18,9972a21c74fe6a18] - Accept=[application/json, application/*+json]
+2025-11-09 11:41:41.414 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff65f2e115409972a21c74fe6a18,9972a21c74fe6a18] - Response 200 OK
+2025-11-09 11:41:41.650 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:41:41.651 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:41:41.652 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@15d103c4] as "application/json"
+2025-11-09 11:41:41.665 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:42:10.919 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:42:10.920 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff82b41aa3dc1d356bd7a70725d4,1d356bd7a70725d4] - Accept=[application/json, application/*+json]
+2025-11-09 11:42:10.927 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff82b41aa3dc1d356bd7a70725d4,1d356bd7a70725d4] - Response 200 OK
+2025-11-09 11:42:10.929 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff82b41aa3dc1d356bd7a70725d4,1d356bd7a70725d4] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:42:11.370 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:42:11.372 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff83d74856e93f8c1210c95ece13,3f8c1210c95ece13] - Accept=[application/json, application/*+json]
+2025-11-09 11:42:11.379 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fff83d74856e93f8c1210c95ece13,3f8c1210c95ece13] - Response 200 OK
+2025-11-09 11:42:11.688 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:42:11.688 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:42:11.688 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@752e7a0c] as "application/json"
+2025-11-09 11:42:11.708 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:42:40.937 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:42:40.939 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffa01e09b600ca3c724e890f9959,ca3c724e890f9959] - Accept=[application/json, application/*+json]
+2025-11-09 11:42:40.946 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffa01e09b600ca3c724e890f9959,ca3c724e890f9959] - Response 200 OK
+2025-11-09 11:42:40.947 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffa01e09b600ca3c724e890f9959,ca3c724e890f9959] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:42:41.384 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:42:41.386 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffa1d6b50dcba5dee2ca12b80224,a5dee2ca12b80224] - Accept=[application/json, application/*+json]
+2025-11-09 11:42:41.399 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffa1d6b50dcba5dee2ca12b80224,a5dee2ca12b80224] - Response 200 OK
+2025-11-09 11:42:41.768 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:42:41.769 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:42:41.769 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@58c11b4c] as "application/json"
+2025-11-09 11:42:41.787 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:43:10.950 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:43:10.951 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffbe8d22fa3c2d51b81136bc03a4,2d51b81136bc03a4] - Accept=[application/json, application/*+json]
+2025-11-09 11:43:10.956 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffbe8d22fa3c2d51b81136bc03a4,2d51b81136bc03a4] - Response 200 OK
+2025-11-09 11:43:10.957 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffbe8d22fa3c2d51b81136bc03a4,2d51b81136bc03a4] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:43:11.405 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:43:11.406 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffbf9c9854119664cf5c14b41a91,9664cf5c14b41a91] - Accept=[application/json, application/*+json]
+2025-11-09 11:43:11.412 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffbf9c9854119664cf5c14b41a91,9664cf5c14b41a91] - Response 200 OK
+2025-11-09 11:43:11.832 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:43:11.833 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:43:11.833 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@52ecde32] as "application/json"
+2025-11-09 11:43:11.856 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:43:40.965 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:43:40.970 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffdce4b9a9675bf379e22a3bb4b0,5bf379e22a3bb4b0] - Accept=[application/json, application/*+json]
+2025-11-09 11:43:40.979 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffdce4b9a9675bf379e22a3bb4b0,5bf379e22a3bb4b0] - Response 200 OK
+2025-11-09 11:43:40.981 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffdce4b9a9675bf379e22a3bb4b0,5bf379e22a3bb4b0] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:43:41.418 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:43:41.421 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffdd82402049524e8801f4d76b51,524e8801f4d76b51] - Accept=[application/json, application/*+json]
+2025-11-09 11:43:41.428 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690fffdd82402049524e8801f4d76b51,524e8801f4d76b51] - Response 200 OK
+2025-11-09 11:43:41.928 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:43:41.928 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:43:41.928 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@4f3e2888] as "application/json"
+2025-11-09 11:43:41.942 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:44:10.990 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:44:11.003 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffffa73ccf185db373857eaa95dcb,db373857eaa95dcb] - Accept=[application/json, application/*+json]
+2025-11-09 11:44:11.019 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffffa73ccf185db373857eaa95dcb,db373857eaa95dcb] - Response 200 OK
+2025-11-09 11:44:11.021 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffffa73ccf185db373857eaa95dcb,db373857eaa95dcb] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:44:11.435 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:44:11.440 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffffb0299092a8c475a90de21846d,8c475a90de21846d] - Accept=[application/json, application/*+json]
+2025-11-09 11:44:11.447 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [690ffffb0299092a8c475a90de21846d,8c475a90de21846d] - Response 200 OK
+2025-11-09 11:44:11.988 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:44:12.000 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:44:12.000 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@49c6d579] as "application/json"
+2025-11-09 11:44:12.181 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:44:41.035 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:44:41.037 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100019e7c1068aa7a350ddce57d4ca,a7a350ddce57d4ca] - Accept=[application/json, application/*+json]
+2025-11-09 11:44:41.044 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100019e7c1068aa7a350ddce57d4ca,a7a350ddce57d4ca] - Response 200 OK
+2025-11-09 11:44:41.045 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100019e7c1068aa7a350ddce57d4ca,a7a350ddce57d4ca] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:44:41.235 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:44:41.236 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:44:41.236 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@190dac76] as "application/json"
+2025-11-09 11:44:41.266 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:44:41.454 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:44:41.456 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100019ae1b84b8eaec8c5c5ff86c3b,eaec8c5c5ff86c3b] - Accept=[application/json, application/*+json]
+2025-11-09 11:44:41.461 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100019ae1b84b8eaec8c5c5ff86c3b,eaec8c5c5ff86c3b] - Response 200 OK
+2025-11-09 11:44:42.269 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:44:42.271 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:44:42.273 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@2da4fc2b] as "application/json"
+2025-11-09 11:44:42.317 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:45:11.055 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:45:11.059 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000378fcacb3b771ccca194c6150a,771ccca194c6150a] - Accept=[application/json, application/*+json]
+2025-11-09 11:45:11.065 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000378fcacb3b771ccca194c6150a,771ccca194c6150a] - Response 200 OK
+2025-11-09 11:45:11.067 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000378fcacb3b771ccca194c6150a,771ccca194c6150a] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:45:11.371 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:45:11.371 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:45:11.373 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@13e0fb7f] as "application/json"
+2025-11-09 11:45:11.410 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:45:11.466 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:45:11.468 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000371451fa22b2d8c03aa02110b2,b2d8c03aa02110b2] - Accept=[application/json, application/*+json]
+2025-11-09 11:45:11.473 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000371451fa22b2d8c03aa02110b2,b2d8c03aa02110b2] - Response 200 OK
+2025-11-09 11:45:12.415 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:45:12.415 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:45:12.416 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@6c729967] as "application/json"
+2025-11-09 11:45:12.429 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:45:41.074 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:45:41.076 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910005514c4fba4f5631b6a6fe29c5c,f5631b6a6fe29c5c] - Accept=[application/json, application/*+json]
+2025-11-09 11:45:41.080 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910005514c4fba4f5631b6a6fe29c5c,f5631b6a6fe29c5c] - Response 200 OK
+2025-11-09 11:45:41.083 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910005514c4fba4f5631b6a6fe29c5c,f5631b6a6fe29c5c] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:45:41.477 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:45:41.479 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000556d516aea7bc88e857f4c1d47,7bc88e857f4c1d47] - Accept=[application/json, application/*+json]
+2025-11-09 11:45:41.486 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000556d516aea7bc88e857f4c1d47,7bc88e857f4c1d47] - Response 200 OK
+2025-11-09 11:45:41.490 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:45:41.491 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:45:41.494 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@1868e683] as "application/json"
+2025-11-09 11:45:41.520 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:46:11.087 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:46:11.088 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910007364c2a4fd211c39f9dd8a159d,211c39f9dd8a159d] - Accept=[application/json, application/*+json]
+2025-11-09 11:46:11.092 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910007364c2a4fd211c39f9dd8a159d,211c39f9dd8a159d] - Response 200 OK
+2025-11-09 11:46:11.092 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910007364c2a4fd211c39f9dd8a159d,211c39f9dd8a159d] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:46:11.488 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:46:11.489 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100073a5af2d74ff5674cc25d384b7,ff5674cc25d384b7] - Accept=[application/json, application/*+json]
+2025-11-09 11:46:11.496 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100073a5af2d74ff5674cc25d384b7,ff5674cc25d384b7] - Response 200 OK
+2025-11-09 11:46:11.574 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:46:11.574 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:46:11.574 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@12a70401] as "application/json"
+2025-11-09 11:46:11.589 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:46:41.098 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:46:41.099 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100091572b67cebf1fb619b1d12580,bf1fb619b1d12580] - Accept=[application/json, application/*+json]
+2025-11-09 11:46:41.104 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100091572b67cebf1fb619b1d12580,bf1fb619b1d12580] - Response 200 OK
+2025-11-09 11:46:41.104 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100091572b67cebf1fb619b1d12580,bf1fb619b1d12580] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:46:41.503 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:46:41.505 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100091d8b9c0445177e8d6b5c900b7,5177e8d6b5c900b7] - Accept=[application/json, application/*+json]
+2025-11-09 11:46:41.509 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100091d8b9c0445177e8d6b5c900b7,5177e8d6b5c900b7] - Response 200 OK
+2025-11-09 11:46:41.669 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:46:41.669 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:46:41.670 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@6082e29] as "application/json"
+2025-11-09 11:46:41.684 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:47:11.107 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:47:11.108 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000afe18f702faebf22c3dcb3278e,aebf22c3dcb3278e] - Accept=[application/json, application/*+json]
+2025-11-09 11:47:11.115 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000afe18f702faebf22c3dcb3278e,aebf22c3dcb3278e] - Response 200 OK
+2025-11-09 11:47:11.115 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000afe18f702faebf22c3dcb3278e,aebf22c3dcb3278e] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:47:11.513 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:47:11.515 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000aff3e8d310e83ab21cb37d7526,e83ab21cb37d7526] - Accept=[application/json, application/*+json]
+2025-11-09 11:47:11.521 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000aff3e8d310e83ab21cb37d7526,e83ab21cb37d7526] - Response 200 OK
+2025-11-09 11:47:11.756 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:47:11.757 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:47:11.757 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@7e49362e] as "application/json"
+2025-11-09 11:47:11.777 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:47:41.121 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:47:41.126 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000cd75c85d40bd5e53dc03d02c8e,bd5e53dc03d02c8e] - Accept=[application/json, application/*+json]
+2025-11-09 11:47:41.130 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000cd75c85d40bd5e53dc03d02c8e,bd5e53dc03d02c8e] - Response 200 OK
+2025-11-09 11:47:41.130 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000cd75c85d40bd5e53dc03d02c8e,bd5e53dc03d02c8e] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:47:41.527 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:47:41.531 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000cde55c2dec3cc4054aef3deb4f,3cc4054aef3deb4f] - Accept=[application/json, application/*+json]
+2025-11-09 11:47:41.538 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000cde55c2dec3cc4054aef3deb4f,3cc4054aef3deb4f] - Response 200 OK
+2025-11-09 11:47:41.852 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:47:41.852 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:47:41.853 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@214a8b9a] as "application/json"
+2025-11-09 11:47:41.873 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:48:11.136 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:48:11.139 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000ebd086b5bfb567a4d9b6697218,b567a4d9b6697218] - Accept=[application/json, application/*+json]
+2025-11-09 11:48:11.143 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000ebd086b5bfb567a4d9b6697218,b567a4d9b6697218] - Response 200 OK
+2025-11-09 11:48:11.143 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000ebd086b5bfb567a4d9b6697218,b567a4d9b6697218] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:48:11.545 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:48:11.565 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000ebe0a209e355b5a8bcf9c13baf,55b5a8bcf9c13baf] - Accept=[application/json, application/*+json]
+2025-11-09 11:48:11.570 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691000ebe0a209e355b5a8bcf9c13baf,55b5a8bcf9c13baf] - Response 200 OK
+2025-11-09 11:48:11.937 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:48:11.938 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:48:11.938 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@b6714be] as "application/json"
+2025-11-09 11:48:11.948 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:48:41.150 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:48:41.151 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100109e338df94ea4044955f57fa4a,ea4044955f57fa4a] - Accept=[application/json, application/*+json]
+2025-11-09 11:48:41.155 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100109e338df94ea4044955f57fa4a,ea4044955f57fa4a] - Response 200 OK
+2025-11-09 11:48:41.157 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100109e338df94ea4044955f57fa4a,ea4044955f57fa4a] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:48:41.574 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:48:41.575 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100109c85c4147c4280a61c8cfdc6f,c4280a61c8cfdc6f] - Accept=[application/json, application/*+json]
+2025-11-09 11:48:41.581 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100109c85c4147c4280a61c8cfdc6f,c4280a61c8cfdc6f] - Response 200 OK
+2025-11-09 11:48:42.006 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:48:42.007 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:48:42.007 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@4c590a9d] as "application/json"
+2025-11-09 11:48:42.022 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:49:11.175 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:49:11.218 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100127e91ad6c8f23181cd646396f2,f23181cd646396f2] - Accept=[application/json, application/*+json]
+2025-11-09 11:49:11.305 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100127e91ad6c8f23181cd646396f2,f23181cd646396f2] - Response 200 OK
+2025-11-09 11:49:11.344 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100127e91ad6c8f23181cd646396f2,f23181cd646396f2] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:49:11.660 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:49:11.716 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100127f5681bad507d1424f6934899,507d1424f6934899] - Accept=[application/json, application/*+json]
+2025-11-09 11:49:11.728 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100127f5681bad507d1424f6934899,507d1424f6934899] - Response 200 OK
+2025-11-09 11:49:12.086 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:49:12.087 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:49:12.087 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@7b16bd7e] as "application/json"
+2025-11-09 11:49:12.144 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:49:41.412 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:49:41.413 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910014579c1c0795483d4537d3c3cfe,5483d4537d3c3cfe] - Accept=[application/json, application/*+json]
+2025-11-09 11:49:41.418 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910014579c1c0795483d4537d3c3cfe,5483d4537d3c3cfe] - Response 200 OK
+2025-11-09 11:49:41.419 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910014579c1c0795483d4537d3c3cfe,5483d4537d3c3cfe] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:49:41.736 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:49:41.737 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001454c8fe04420d3776512048b93,20d3776512048b93] - Accept=[application/json, application/*+json]
+2025-11-09 11:49:41.743 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001454c8fe04420d3776512048b93,20d3776512048b93] - Response 200 OK
+2025-11-09 11:49:42.223 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:49:42.223 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:49:42.225 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@ef5efdd] as "application/json"
+2025-11-09 11:49:42.243 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:50:11.421 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:50:11.422 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910016374d7b4e661c959249beb3479,61c959249beb3479] - Accept=[application/json, application/*+json]
+2025-11-09 11:50:11.430 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910016374d7b4e661c959249beb3479,61c959249beb3479] - Response 200 OK
+2025-11-09 11:50:11.431 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910016374d7b4e661c959249beb3479,61c959249beb3479] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:50:11.745 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:50:11.746 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100163f8cd2e08e6b492c7db91c5b2,e6b492c7db91c5b2] - Accept=[application/json, application/*+json]
+2025-11-09 11:50:11.751 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100163f8cd2e08e6b492c7db91c5b2,e6b492c7db91c5b2] - Response 200 OK
+2025-11-09 11:50:12.306 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:50:12.307 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:50:12.307 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@3d04c859] as "application/json"
+2025-11-09 11:50:12.320 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:50:41.434 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:50:41.435 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001811272a968c32bef0069d5d572,c32bef0069d5d572] - Accept=[application/json, application/*+json]
+2025-11-09 11:50:41.441 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001811272a968c32bef0069d5d572,c32bef0069d5d572] - Response 200 OK
+2025-11-09 11:50:41.441 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001811272a968c32bef0069d5d572,c32bef0069d5d572] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:50:41.755 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:50:41.757 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100181ca4281ee48c46be87b757d88,48c46be87b757d88] - Accept=[application/json, application/*+json]
+2025-11-09 11:50:41.763 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100181ca4281ee48c46be87b757d88,48c46be87b757d88] - Response 200 OK
+2025-11-09 11:50:42.393 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:50:42.393 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:50:42.393 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@398d2086] as "application/json"
+2025-11-09 11:50:42.408 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:51:11.482 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:51:11.483 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910019f63d853bcbda0c92c8e4d945f,bda0c92c8e4d945f] - Accept=[application/json, application/*+json]
+2025-11-09 11:51:11.487 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910019f63d853bcbda0c92c8e4d945f,bda0c92c8e4d945f] - Response 200 OK
+2025-11-09 11:51:11.489 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910019f63d853bcbda0c92c8e4d945f,bda0c92c8e4d945f] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:51:11.764 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:51:11.765 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910019f80143afce86c7ecff6755ae2,e86c7ecff6755ae2] - Accept=[application/json, application/*+json]
+2025-11-09 11:51:11.771 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910019f80143afce86c7ecff6755ae2,e86c7ecff6755ae2] - Response 200 OK
+2025-11-09 11:51:12.482 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:51:12.483 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:51:12.484 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@773e8784] as "application/json"
+2025-11-09 11:51:12.492 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:51:41.498 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:51:41.501 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001bda8693fcfcc159368aad49897,cc159368aad49897] - Accept=[application/json, application/*+json]
+2025-11-09 11:51:41.506 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001bda8693fcfcc159368aad49897,cc159368aad49897] - Response 200 OK
+2025-11-09 11:51:41.508 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001bda8693fcfcc159368aad49897,cc159368aad49897] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:51:41.562 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:51:41.562 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:51:41.562 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@561415b9] as "application/json"
+2025-11-09 11:51:41.568 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:51:41.777 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:51:41.778 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001bdd812c65f6153a55d8c3f0d6d,6153a55d8c3f0d6d] - Accept=[application/json, application/*+json]
+2025-11-09 11:51:41.782 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001bdd812c65f6153a55d8c3f0d6d,6153a55d8c3f0d6d] - Response 200 OK
+2025-11-09 11:51:42.571 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:51:42.572 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:51:42.573 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@4d495922] as "application/json"
+2025-11-09 11:51:42.580 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:52:11.512 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:52:11.512 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001db93b8f8d5e5e50639a9c9eb37,e5e50639a9c9eb37] - Accept=[application/json, application/*+json]
+2025-11-09 11:52:11.518 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001db93b8f8d5e5e50639a9c9eb37,e5e50639a9c9eb37] - Response 200 OK
+2025-11-09 11:52:11.518 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001db93b8f8d5e5e50639a9c9eb37,e5e50639a9c9eb37] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:52:11.660 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:52:11.661 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:52:11.661 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@1d10c91d] as "application/json"
+2025-11-09 11:52:11.671 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:52:11.783 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:52:11.783 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001dbd487e1a3f6599302122c3889,f6599302122c3889] - Accept=[application/json, application/*+json]
+2025-11-09 11:52:11.789 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001dbd487e1a3f6599302122c3889,f6599302122c3889] - Response 200 OK
+2025-11-09 11:52:12.671 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:52:12.672 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:52:12.672 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@1e117f9c] as "application/json"
+2025-11-09 11:52:12.683 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:52:41.520 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:52:41.521 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001f949010cb049eb319e5dd32128,49eb319e5dd32128] - Accept=[application/json, application/*+json]
+2025-11-09 11:52:41.526 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001f949010cb049eb319e5dd32128,49eb319e5dd32128] - Response 200 OK
+2025-11-09 11:52:41.526 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001f949010cb049eb319e5dd32128,49eb319e5dd32128] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:52:41.741 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:52:41.744 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:52:41.744 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@685e083a] as "application/json"
+2025-11-09 11:52:41.751 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:52:41.791 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:52:41.792 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001f95667c877b87b1ef171d41287,b87b1ef171d41287] - Accept=[application/json, application/*+json]
+2025-11-09 11:52:41.797 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691001f95667c877b87b1ef171d41287,b87b1ef171d41287] - Response 200 OK
+2025-11-09 11:52:42.752 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:52:42.752 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:52:42.753 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@6fd9cc5a] as "application/json"
+2025-11-09 11:52:42.755 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:52:44.573 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet [691001fc3947dd4d8a6d8ddfc29ecdbe,39a2bf67b04eb765] - GET "/v3/api-docs", parameters={}
+2025-11-09 11:52:44.578 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [691001fc3947dd4d8a6d8ddfc29ecdbe,39a2bf67b04eb765] - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2025-11-09 11:52:44.764 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:52:44.764 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:52:44.764 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@749ab89d] as "application/json"
+2025-11-09 11:52:44.805 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:52:47.684 [http-nio-8081-exec-3] INFO  o.s.api.AbstractOpenApiResource [691001fc3947dd4d8a6d8ddfc29ecdbe,39a2bf67b04eb765] - Init duration for springdoc-openapi is: 2799 ms
+2025-11-09 11:52:47.721 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor [691001fc3947dd4d8a6d8ddfc29ecdbe,39a2bf67b04eb765] - Using 'application/json', given [application/json, */*] and supported [application/json]
+2025-11-09 11:52:47.730 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor [691001fc3947dd4d8a6d8ddfc29ecdbe,39a2bf67b04eb765] - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2025-11-09 11:52:47.732 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet [691001fc3947dd4d8a6d8ddfc29ecdbe,39a2bf67b04eb765] - Completed 200 OK
+2025-11-09 11:52:47.816 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:52:47.817 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:52:47.817 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@6162c40d] as "application/json"
+2025-11-09 11:52:47.839 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:53:11.529 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:53:11.529 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910021749887c794058b80fe3ae7d85,4058b80fe3ae7d85] - Accept=[application/json, application/*+json]
+2025-11-09 11:53:11.536 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910021749887c794058b80fe3ae7d85,4058b80fe3ae7d85] - Response 200 OK
+2025-11-09 11:53:11.536 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910021749887c794058b80fe3ae7d85,4058b80fe3ae7d85] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:53:11.799 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:53:11.800 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910021755b967a203012213c82b22b5,03012213c82b22b5] - Accept=[application/json, application/*+json]
+2025-11-09 11:53:11.804 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910021755b967a203012213c82b22b5,03012213c82b22b5] - Response 200 OK
+2025-11-09 11:53:11.886 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:53:11.886 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:53:11.887 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@79e50fc3] as "application/json"
+2025-11-09 11:53:11.909 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:53:30.096 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - POST "/api/v1/auth/register", parameters={}
+2025-11-09 11:53:30.097 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - Mapped to com.lovedev.user.controller.AuthController#register(RegisterRequest)
+2025-11-09 11:53:30.105 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - Read "application/json;charset=UTF-8" to [RegisterRequest(email=socheathun23@gmail.com, password=Socheat23!, firstName=Socheat, lastName=Hun)]
+2025-11-09 11:53:30.377 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - select u1_0.id from users u1_0 where (u1_0.deleted_at IS NULL) and u1_0.email=? fetch first ? rows only
+2025-11-09 11:53:30.448 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - select r1_0.id,r1_0.created_at,r1_0.description,r1_0.is_system_role,r1_0.name,r1_0.updated_at from roles r1_0 where r1_0.name=?
+2025-11-09 11:53:30.468 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - select p1_0.role_id,p1_1.id,p1_1.action,p1_1.created_at,p1_1.description,p1_1.name,p1_1.resource from role_permissions p1_0 join permissions p1_1 on p1_1.id=p1_0.permission_id where p1_0.role_id=?
+2025-11-09 11:53:30.782 [http-nio-8081-exec-5] INFO  c.lovedev.user.service.AuthService [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - New user registered: socheathun23@gmail.com with role: ROLE_USER
+2025-11-09 11:53:30.879 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - insert into users (address,bio,created_at,date_of_birth,deleted_at,email,email_verification_expires_at,email_verification_token,email_verified,first_name,last_login_at,last_name,password,password_reset_expires_at,password_reset_token,phone_number,profile_picture_url,status,updated_at,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-11-09 11:53:30.902 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - insert into audit_logs (action,created_at,description,entity_id,entity_type,ip_address,new_value,old_value,user_id,user_agent,id) values (?,?,?,?,?,?,?,?,?,?,?)
+2025-11-09 11:53:30.926 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:53:30.927 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:53:30.927 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@58ffb7b9] as "application/json"
+2025-11-09 11:53:30.927 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - insert into user_roles (user_id,role_id) values (?,?)
+2025-11-09 11:53:30.962 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-09 11:53:30.963 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - Writing [ApiResponse(success=true, message=User registered successfully. Please check your email to verify yo (truncated)...]
+2025-11-09 11:53:30.969 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet [6910022a7486adc7807487fd615e7b0e,42db7316ef7d0f9a] - Completed 201 CREATED
+2025-11-09 11:53:30.975 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:53:31.439 [kafka-producer-network-thread | user-service-producer-1] INFO  c.l.user.kafka.UserEventProducer [,] - Published event to topic: email.verify with key: 1b870b59-6a9d-41dc-abec-e6776369395c - Offset: 2
+2025-11-09 11:53:31.979 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:53:31.979 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:53:31.980 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@7900b26b] as "application/json"
+2025-11-09 11:53:32.017 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:53:41.539 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:53:41.540 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100235017aa8e65f99fd90cef3568c,5f99fd90cef3568c] - Accept=[application/json, application/*+json]
+2025-11-09 11:53:41.551 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100235017aa8e65f99fd90cef3568c,5f99fd90cef3568c] - Response 200 OK
+2025-11-09 11:53:41.551 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100235017aa8e65f99fd90cef3568c,5f99fd90cef3568c] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:53:41.809 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:53:41.809 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100235f9603fadfc0767114eb5c6c6,fc0767114eb5c6c6] - Accept=[application/json, application/*+json]
+2025-11-09 11:53:41.816 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100235f9603fadfc0767114eb5c6c6,fc0767114eb5c6c6] - Response 200 OK
+2025-11-09 11:53:42.036 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:53:42.037 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:53:42.037 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@e3543ea] as "application/json"
+2025-11-09 11:53:42.073 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:54:11.555 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:54:11.556 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910025382e895bcff09d0264687e241,ff09d0264687e241] - Accept=[application/json, application/*+json]
+2025-11-09 11:54:11.561 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910025382e895bcff09d0264687e241,ff09d0264687e241] - Response 200 OK
+2025-11-09 11:54:11.561 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910025382e895bcff09d0264687e241,ff09d0264687e241] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:54:11.816 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:54:11.817 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002533f41f847586c1634ed520e24,586c1634ed520e24] - Accept=[application/json, application/*+json]
+2025-11-09 11:54:11.822 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002533f41f847586c1634ed520e24,586c1634ed520e24] - Response 200 OK
+2025-11-09 11:54:12.142 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:54:12.143 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:54:12.143 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@5f7fdef8] as "application/json"
+2025-11-09 11:54:12.153 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:54:41.563 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:54:41.563 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100271e3ff8d9d1b57b3f463730227,1b57b3f463730227] - Accept=[application/json, application/*+json]
+2025-11-09 11:54:41.568 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100271e3ff8d9d1b57b3f463730227,1b57b3f463730227] - Response 200 OK
+2025-11-09 11:54:41.569 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100271e3ff8d9d1b57b3f463730227,1b57b3f463730227] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:54:41.825 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:54:41.826 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100271ce80b66d2aed256ad5ac23a8,2aed256ad5ac23a8] - Accept=[application/json, application/*+json]
+2025-11-09 11:54:41.832 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100271ce80b66d2aed256ad5ac23a8,2aed256ad5ac23a8] - Response 200 OK
+2025-11-09 11:54:42.202 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:54:42.203 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:54:42.203 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@7a98e8d1] as "application/json"
+2025-11-09 11:54:42.215 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:55:11.595 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:55:11.626 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910028ffefb49b81560c41c4b4ed5fc,1560c41c4b4ed5fc] - Accept=[application/json, application/*+json]
+2025-11-09 11:55:11.635 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910028ffefb49b81560c41c4b4ed5fc,1560c41c4b4ed5fc] - Response 200 OK
+2025-11-09 11:55:11.636 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910028ffefb49b81560c41c4b4ed5fc,1560c41c4b4ed5fc] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:55:11.833 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:55:11.834 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910028fd698f2fdf18f158b32cf710b,f18f158b32cf710b] - Accept=[application/json, application/*+json]
+2025-11-09 11:55:11.840 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [6910028fd698f2fdf18f158b32cf710b,f18f158b32cf710b] - Response 200 OK
+2025-11-09 11:55:12.283 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:55:12.283 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:55:12.284 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@6f78e03] as "application/json"
+2025-11-09 11:55:12.290 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:55:41.642 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:55:41.643 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002adb6c865abfda1f311439f15a0,fda1f311439f15a0] - Accept=[application/json, application/*+json]
+2025-11-09 11:55:41.649 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002adb6c865abfda1f311439f15a0,fda1f311439f15a0] - Response 200 OK
+2025-11-09 11:55:41.650 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002adb6c865abfda1f311439f15a0,fda1f311439f15a0] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:55:41.846 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:55:41.847 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002adb56695f0102c720104d589f7,102c720104d589f7] - Accept=[application/json, application/*+json]
+2025-11-09 11:55:41.851 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002adb56695f0102c720104d589f7,102c720104d589f7] - Response 200 OK
+2025-11-09 11:55:42.376 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:55:42.377 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:55:42.377 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@22f9b724] as "application/json"
+2025-11-09 11:55:42.385 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:56:11.655 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:56:11.656 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002cb7703293dafc10c7109879009,afc10c7109879009] - Accept=[application/json, application/*+json]
+2025-11-09 11:56:11.660 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002cb7703293dafc10c7109879009,afc10c7109879009] - Response 200 OK
+2025-11-09 11:56:11.661 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002cb7703293dafc10c7109879009,afc10c7109879009] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:56:11.857 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:56:11.858 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002cbac8e6d07a8380e261dbf82b1,a8380e261dbf82b1] - Accept=[application/json, application/*+json]
+2025-11-09 11:56:11.872 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002cbac8e6d07a8380e261dbf82b1,a8380e261dbf82b1] - Response 200 OK
+2025-11-09 11:56:12.467 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:56:12.467 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:56:12.468 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@3d0259d] as "application/json"
+2025-11-09 11:56:12.476 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:56:41.666 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:56:41.667 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002e94412fb4e57925711b1587ce7,57925711b1587ce7] - Accept=[application/json, application/*+json]
+2025-11-09 11:56:41.680 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002e94412fb4e57925711b1587ce7,57925711b1587ce7] - Response 200 OK
+2025-11-09 11:56:41.681 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002e94412fb4e57925711b1587ce7,57925711b1587ce7] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:56:41.876 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:56:41.876 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002e93b0a3193a5a8c238a3bbc7f2,a5a8c238a3bbc7f2] - Accept=[application/json, application/*+json]
+2025-11-09 11:56:41.882 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691002e93b0a3193a5a8c238a3bbc7f2,a5a8c238a3bbc7f2] - Response 200 OK
+2025-11-09 11:56:42.528 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:56:42.528 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:56:42.528 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@3e338b56] as "application/json"
+2025-11-09 11:56:42.537 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:57:11.682 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:57:11.683 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100307829f5e130cbdcb08e4256970,0cbdcb08e4256970] - Accept=[application/json, application/*+json]
+2025-11-09 11:57:11.691 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100307829f5e130cbdcb08e4256970,0cbdcb08e4256970] - Response 200 OK
+2025-11-09 11:57:11.691 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100307829f5e130cbdcb08e4256970,0cbdcb08e4256970] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:57:11.883 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:57:11.883 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691003079495317afa3600a77959a818,fa3600a77959a818] - Accept=[application/json, application/*+json]
+2025-11-09 11:57:11.890 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [691003079495317afa3600a77959a818,fa3600a77959a818] - Response 200 OK
+2025-11-09 11:57:12.597 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:57:12.597 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:57:12.597 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@40e8d05] as "application/json"
+2025-11-09 11:57:12.606 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
+2025-11-09 11:57:41.694 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-09 11:57:41.695 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100325f223a5638fe309fb0f0678eb,8fe309fb0f0678eb] - Accept=[application/json, application/*+json]
+2025-11-09 11:57:41.702 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100325f223a5638fe309fb0f0678eb,8fe309fb0f0678eb] - Response 200 OK
+2025-11-09 11:57:41.702 [DiscoveryClient-CacheRefreshExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100325f223a5638fe309fb0f0678eb,8fe309fb0f0678eb] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-09 11:57:41.892 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [,] - HTTP PUT http://localhost:8761/eureka/apps/USER-SERVICE/172.30.1.41:user-service:8081?status=UP&lastDirtyTimestamp=1762655200847
+2025-11-09 11:57:41.893 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100325cb0d153a8d40fac49d4d0820,8d40fac49d4d0820] - Accept=[application/json, application/*+json]
+2025-11-09 11:57:41.903 [DiscoveryClient-HeartbeatExecutor-%d] DEBUG o.s.web.client.RestTemplate [69100325cb0d153a8d40fac49d4d0820,8d40fac49d4d0820] - Response 200 OK
+2025-11-09 11:57:42.664 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - HTTP POST http://localhost:9411/api/v2/spans
+2025-11-09 11:57:42.664 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Accept=[application/json, application/*+json]
+2025-11-09 11:57:42.664 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Writing [[B@6ba15a37] as "application/json"
+2025-11-09 11:57:42.673 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] DEBUG o.s.web.client.RestTemplate [,] - Response 202 ACCEPTED
