@@ -31,7 +31,7 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final CustomUserDetailsService customUserDetailsService;
     private final OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler;
-    private final PasswordEncoder passwordEncoder; // ✅ Inject instead of creating
+    private final PasswordEncoder passwordEncoder; // Inject instead of creating
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -48,22 +48,22 @@ public class SecurityConfig {
                                 "/swagger-ui.html",
                                 "/v3/api-docs/**",
                                 "/actuator/health",
-                                "/oauth2/**",
+                                "/api/v1/oauth2/**",
                                 "/login/oauth2/**",
                                 "/oauth2/**"
                         ).permitAll()
 
                         // Admin endpoints
-                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/v1/admin/**").hasAuthority("ROLE_SUPER_ADMIN")
 
                         // Manager endpoints
-                        .requestMatchers(HttpMethod.GET, "/api/v1/users").hasAnyRole("MANAGER", "ADMIN")
-                        .requestMatchers("/api/v1/notifications/**").authenticated()                        // Authenticated endpoints
+                      //  .requestMatchers(HttpMethod.GET, "/api/v1/users").hasAnyRole("MANAGER", "ADMIN")
+                        .requestMatchers("/api/v1/users/**").authenticated()
                         .anyRequest()
                         .authenticated()
                 )
                 // ============================================
-                // ✅ ENABLED: OAuth2 Login Configuration
+                // ENABLED: OAuth2 Login Configuration
                 // ============================================
                 .oauth2Login(oauth2 -> oauth2
                         .loginPage("/oauth2/authorization/google") // Optional: custom login page

@@ -5,20 +5,30 @@ spring:
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
+  security:
+    user:
+      name: disabled
+      password: disabled
+
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
       group-id: email-service-group
       auto-offset-reset: latest
       enable-auto-commit: false
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      # Use ErrorHandlingDeserializer to handle deserialization errors gracefully
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
         spring.json.trusted.packages: "*"
         spring.json.value.default.type: com.lovedev.email.model.dto.request.UserEventRequest
+        # Configure the actual deserializers as delegates
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
 
   servlet:
     multipart:

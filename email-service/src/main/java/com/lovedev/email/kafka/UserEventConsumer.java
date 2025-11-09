@@ -1,9 +1,14 @@
 package com.lovedev.email.kafka;
+
 import com.lovedev.email.model.dto.request.UserEventRequest;
 import com.lovedev.email.service.EmailService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.support.Acknowledgment;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.handler.annotation.Header;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,40 +19,107 @@ public class UserEventConsumer {
     private final EmailService emailService;
 
     @KafkaListener(topics = "email.verify", groupId = "email-service-group")
-    public void handleVerifyEmail(UserEventRequest event) {
-        log.info("Received user verify email event: {}", event.getUserId());
+    public void handleVerifyEmail(
+            @Payload UserEventRequest event,
+            @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
+            @Header(KafkaHeaders.RECEIVED_PARTITION) int partition,
+            @Header(KafkaHeaders.OFFSET) long offset,
+            Acknowledgment acknowledgment) {
+
+        log.info("Received user verify email event from topic: {}, partition: {}, offset: {}, userId: {}",
+                topic, partition, offset, event.getUserId());
+
         try {
             String email = (String) event.getData().get("email");
             String firstName = (String) event.getData().get("firstName");
-            String tokenVerify = (String) event.getData().get("firstName");
-            emailService.sendVerificationEmail(email,tokenVerify,firstName);
+            // FIX: This was incorrectly getting "firstName" instead of the token
+            String tokenVerify = (String) event.getData().get("verificationToken");
+
+            if (email == null || firstName == null || tokenVerify == null) {
+                log.error("Missing required fields in event data. Email: {}, FirstName: {}, Token: {}",
+                        email != null, firstName != null, tokenVerify != null);
+                acknowledgment.acknowledge(); // Acknowledge to skip this bad message
+                return;
+            }
+
+            emailService.sendVerificationEmail(email, tokenVerify, firstName);
+            log.info("Successfully sent verification email to: {}", email);
+
+            // Manually acknowledge the message
+            acknowledgment.acknowledge();
         } catch (Exception e) {
-            log.error("Error sending email for user: {}", event.getUserId(), e);
+            log.error("Error sending verification email for user: {}. Error: {}",
+                    event.getUserId(), e.getMessage(), e);
+            // Don't acknowledge - message will be retried
         }
     }
 
     @KafkaListener(topics = "email.welcome", groupId = "email-service-group")
-    public void handleEmailWelcome(UserEventRequest event) {
-        log.info("Received user welcome email event: {}", event.getUserId());
+    public void handleEmailWelcome(
+            @Payload UserEventRequest event,
+            @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
+            @Header(KafkaHeaders.RECEIVED_PARTITION) int partition,
+            @Header(KafkaHeaders.OFFSET) long offset,
+            Acknowledgment acknowledgment) {
+
+        log.info("Received user welcome email event from topic: {}, partition: {}, offset: {}, userId: {}",
+                topic, partition, offset, event.getUserId());
+
         try {
             String email = (String) event.getData().get("email");
             String firstName = (String) event.getData().get("firstName");
-            emailService.sendWelcomeEmail(email,firstName);
+
+            if (email == null || firstName == null) {
+                log.error("Missing required fields in event data. Email: {}, FirstName: {}",
+                        email != null, firstName != null);
+                acknowledgment.acknowledge(); // Acknowledge to skip this bad message
+                return;
+            }
+
+            emailService.sendWelcomeEmail(email, firstName);
+            log.info("Successfully sent welcome email to: {}", email);
+
+            // Manually acknowledge the message
+            acknowledgment.acknowledge();
         } catch (Exception e) {
-            log.error("Error sending email for user: {}", event.getUserId(), e);
+            log.error("Error sending welcome email for user: {}. Error: {}",
+                    event.getUserId(), e.getMessage(), e);
+            // Don't acknowledge - message will be retried
         }
     }
 
     @KafkaListener(topics = "email.reset.password", groupId = "email-service-group")
-    public void handleEmailResetPassword(UserEventRequest event) {
-        log.info("Received user reset password email event: {}", event.getUserId());
+    public void handleEmailResetPassword(
+            @Payload UserEventRequest event,
+            @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
+            @Header(KafkaHeaders.RECEIVED_PARTITION) int partition,
+            @Header(KafkaHeaders.OFFSET) long offset,
+            Acknowledgment acknowledgment) {
+
+        log.info("Received user reset password email event from topic: {}, partition: {}, offset: {}, userId: {}",
+                topic, partition, offset, event.getUserId());
+
         try {
             String email = (String) event.getData().get("email");
             String firstName = (String) event.getData().get("firstName");
             String token = (String) event.getData().get("token");
-            emailService.sendPasswordResetEmail(email,token,firstName);
+
+            if (email == null || firstName == null || token == null) {
+                log.error("Missing required fields in event data. Email: {}, FirstName: {}, Token: {}",
+                        email != null, firstName != null, token != null);
+                acknowledgment.acknowledge(); // Acknowledge to skip this bad message
+                return;
+            }
+
+            emailService.sendPasswordResetEmail(email, token, firstName);
+            log.info("Successfully sent password reset email to: {}", email);
+
+            // Manually acknowledge the message
+            acknowledgment.acknowledge();
         } catch (Exception e) {
-            log.error("Error sending email for user: {}", event.getUserId(), e);
+            log.error("Error sending password reset email for user: {}. Error: {}",
+                    event.getUserId(), e.getMessage(), e);
+            // Don't acknowledge - message will be retried
         }
     }
 }

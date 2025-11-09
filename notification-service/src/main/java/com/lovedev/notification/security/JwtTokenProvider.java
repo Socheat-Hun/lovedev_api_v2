@@ -11,9 +11,10 @@ import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Component
@@ -38,39 +39,53 @@ public class JwtTokenProvider {
         }
     }
 
-    public Long getUserIdFromToken(String token) {
+    /**
+     * Get user ID from token as UUID string
+     * User-service stores UUID in subject field
+     */
+    public String getUserIdFromToken(String token) {
         Claims claims = Jwts.parser()
                 .verifyWith(secretKey)
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
-        return Long.parseLong(claims.getSubject());
+        return claims.getSubject(); // Returns UUID as String
     }
 
-    public String getUsernameFromToken(String token) {
+    /**
+     * Get email from token
+     * User-service stores email in "email" claim, not "username"
+     */
+    public String getEmailFromToken(String token) {
         Claims claims = Jwts.parser()
                 .verifyWith(secretKey)
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
-        return claims.get("username", String.class);
+        return claims.get("email", String.class);
     }
 
+    /**
+     * Get authorities from token
+     * User-service stores roles as comma-separated string in "roles" claim
+     */
     public Collection<? extends GrantedAuthority> getAuthoritiesFromToken(String token) {
         Claims claims = Jwts.parser()
                 .verifyWith(secretKey)
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
-        
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        @SuppressWarnings("unchecked")
-        List<String> roles = claims.get("roles", List.class);
-        
-        if (roles != null) {
-            roles.forEach(role -> authorities.add(new SimpleGrantedAuthority("ROLE_" + role)));
+
+        String roles = claims.get("roles", String.class);
+
+        if (roles == null || roles.isEmpty()) {
+            return Collections.emptyList();
         }
-        
-        return authorities;
+
+        // Split comma-separated roles and convert to authorities
+        return Arrays.stream(roles.split(","))
+                .map(String::trim)
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
     }
 }

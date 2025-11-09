@@ -179,14 +179,14 @@ public class CustomUserDetails implements UserDetails {
      * Check if user is admin
      */
     public boolean isAdmin() {
-        return hasRole("ADMIN");
+        return hasRole("ROLE_SUPER_ADMIN");
     }
 
     /**
      * Check if user is manager or higher
      */
     public boolean isManagerOrHigher() {
-        return hasAnyRole("ADMIN", "MANAGER");
+        return hasAnyRole("ROLE_SUPER_ADMIN", "ROLE_ORG_ADMIN");
     }
 
     // Custom getters

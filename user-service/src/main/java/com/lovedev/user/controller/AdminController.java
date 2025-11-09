@@ -21,7 +21,6 @@ import java.util.UUID;
 @RequestMapping("/api/v1/admin")
 @RequiredArgsConstructor
 @SecurityRequirement(name = "Bearer Authentication")
-@PreAuthorize("hasRole('ADMIN')")
 @Tag(name = "Admin", description = "Admin user management endpoints")
 public class AdminController {
 

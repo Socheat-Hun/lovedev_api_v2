@@ -11,6 +11,7 @@ import com.lovedev.notification.model.entity.Notification;
 import com.lovedev.notification.model.enums.NotificationStatus;
 import com.lovedev.notification.model.enums.NotificationType;
 import com.lovedev.notification.repository.NotificationRepository;
+import com.lovedev.notification.util.SecurityUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -44,7 +45,7 @@ public class NotificationService {
         }
         // Fallback: try to get from name (which might be the user ID as string)
         try {
-            return UUID.fromString(authentication.getName());
+            return UUID.fromString(SecurityUtils.getCurrentUserId());
         } catch (IllegalArgumentException e) {
             throw new UnauthorizedException("Invalid user authentication");
         }
