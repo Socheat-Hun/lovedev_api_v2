@@ -2,6 +2,7 @@ package com.lovedev.notification.service;
 
 import com.google.firebase.messaging.*;
 import com.lovedev.notification.client.UserServiceClient;
+import com.lovedev.notification.exception.ResourceNotFoundException;
 import com.lovedev.notification.exception.UnauthorizedException;
 import com.lovedev.notification.model.dto.request.FCMTokenRequest;
 import com.lovedev.notification.model.dto.request.NotificationSettingsRequest;
@@ -105,6 +106,24 @@ public class FCMService {
                 .createdAt(settings.getCreatedAt())
                 .updatedAt(settings.getUpdatedAt())
                 .build();
+    }
+
+    @Transactional(readOnly = true)
+    public Map<String, Long> getNotificationStats() {
+    //    UUID userId = SecurityHelper.getCurrentUserId();
+     //   User user = userRepository.findById(userId)
+       //         .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+
+    //    Long unreadCount = notificationRepository.countByUserAndStatus(user, NotificationStatus.UNREAD);
+    //    Long readCount = notificationRepository.countByUserAndStatus(user, NotificationStatus.READ);
+  //      Long totalCount = unreadCount + readCount;
+
+        Map<String, Long> stats = new HashMap<>();
+      //  stats.put("unread", unreadCount);
+    //    stats.put("read", readCount);
+  //      stats.put("total", totalCount);
+
+        return stats;
     }
 
     @Transactional
@@ -212,6 +231,10 @@ public class FCMService {
             log.error("Error sending notification", e);
         }
     }
+
+    // ============================================
+    // Notification Statistics
+    // ============================================
 
     @Async
     @Transactional
