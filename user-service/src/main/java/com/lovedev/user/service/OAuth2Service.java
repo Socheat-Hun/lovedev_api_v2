@@ -1,5 +1,6 @@
 package com.lovedev.user.service;
 
+import com.lovedev.user.exception.BadRequestException;
 import com.lovedev.user.exception.ResourceNotFoundException;
 import com.lovedev.user.model.entity.RefreshToken;
 import com.lovedev.user.model.entity.Role;
@@ -58,6 +59,38 @@ public class OAuth2Service {
         // Find or create user
         User user = userRepository.findByEmail(email)
                 .orElseGet(() -> createOAuth2User(email, firstName, lastName, profilePictureUrl, registrationId));
+
+
+        // ✅ SECURITY CHECKS - Same as email/password login
+
+        // Check 1: Soft delete check
+/*        if (user.isDeleted()) {
+            log.warn("OAuth2 login attempt for deleted user: {}", email);
+            throw new BadRequestException("This account has been deleted. Please contact support.");
+        }*/
+
+        // Check 2: Email verification (OAuth2 users are pre-verified, but double-check)
+/*        if (!user.getEmailVerified()) {
+            log.warn("OAuth2 login attempt for unverified user: {}", email);
+            throw new BadRequestException("Please verify your email before logging in");
+        }*/
+
+        // Check 3: BANNED status
+        if (user.getStatus() == UserStatus.BANNED) {
+            log.warn("OAuth2 login attempt for banned user: {}", email);
+            auditService.logAction(user, AuditAction.LOGIN,
+                    "Failed OAuth2 login attempt - Account banned");
+            throw new BadRequestException("Your account has been banned. Please contact support.");
+        }
+
+        // Check 4: INACTIVE status (for safety)
+        if (user.getStatus() == UserStatus.INACTIVE) {
+            log.warn("OAuth2 login attempt for inactive user: {}", email);
+            throw new BadRequestException("Your account is inactive. Please contact support.");
+        }
+
+        // ✅ All checks passed - proceed with login
+        
 
         // Update last login
         user.setLastLoginAt(LocalDateTime.now());

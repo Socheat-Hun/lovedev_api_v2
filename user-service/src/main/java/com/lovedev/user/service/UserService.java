@@ -233,7 +233,12 @@ public class UserService {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
 
-        userRepository.delete(user); // Soft delete via @SQLDelete
+        // Clear roles before soft delete
+        user.clearRoles();
+        userRepository.save(user);
+
+        // Now perform soft delete
+        userRepository.delete(user);
 
         User currentUser = getCurrentUserEntity();
         log.info("User {} deleted by {}", user.getEmail(), currentUser.getEmail());
