@@ -1,6 +1,7 @@
 package com.lovedev.user.controller;
 
 import com.lovedev.user.model.dto.response.ApiResponse;
+import com.lovedev.user.model.dto.response.OAuth2AuthResult;
 import com.lovedev.user.service.OAuth2Service;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -37,7 +38,7 @@ public class OAuth2Controller {
             description = "Handles OAuth2 authentication callback and returns JWT tokens"
     )
     @GetMapping("/callback")
-    public ResponseEntity<ApiResponse<OAuth2Service.OAuth2AuthResult>> handleOAuth2Callback(
+    public ResponseEntity<ApiResponse<OAuth2AuthResult>> handleOAuth2Callback(
             Authentication authentication) {
 
         if (!(authentication instanceof OAuth2AuthenticationToken)) {
@@ -51,7 +52,7 @@ public class OAuth2Controller {
         String registrationId = oauthToken.getAuthorizedClientRegistrationId();
 
         try {
-            OAuth2Service.OAuth2AuthResult result = oAuth2Service.processOAuth2Login(oAuth2User, registrationId);
+            OAuth2AuthResult result = oAuth2Service.processOAuth2Login(oAuth2User, registrationId);
 
             String message = result.isNewUser()
                     ? "Account created successfully via " + registrationId

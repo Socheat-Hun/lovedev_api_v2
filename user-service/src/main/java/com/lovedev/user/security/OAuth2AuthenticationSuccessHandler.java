@@ -1,5 +1,6 @@
 package com.lovedev.user.security;
 
+import com.lovedev.user.model.dto.response.OAuth2AuthResult;
 import com.lovedev.user.service.OAuth2Service;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -46,7 +47,7 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
 
         try {
             // Process OAuth2 login/registration
-            OAuth2Service.OAuth2AuthResult result = oAuth2Service.processOAuth2Login(oAuth2User, registrationId);
+            OAuth2AuthResult result = oAuth2Service.processOAuth2Login(oAuth2User, registrationId);
 
             // Build redirect URL with tokens
             String targetUrl = UriComponentsBuilder.fromUriString(redirectUri)

@@ -1,5 +1,6 @@
-package com.lovedev.user.client;
+package com.lovedev.user.client.impl;
 
+import com.lovedev.user.client.NotificationServiceClient;
 import com.lovedev.user.model.dto.request.BulkNotificationRequest;
 import com.lovedev.user.model.dto.request.NotificationRequest;
 import org.slf4j.Logger;

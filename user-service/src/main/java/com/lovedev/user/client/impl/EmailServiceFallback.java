@@ -1,5 +1,6 @@
-package com.lovedev.user.client;
+package com.lovedev.user.client.impl;
 
+import com.lovedev.user.client.EmailServiceClient;
 import com.lovedev.user.model.dto.request.BulkEmailRequest;
 import com.lovedev.user.model.dto.request.EmailRequest;
 import com.lovedev.user.model.dto.request.TemplateEmailRequest;
