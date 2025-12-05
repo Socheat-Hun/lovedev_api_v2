@@ -5,7 +5,6 @@ import com.lovedev.notification.model.dto.response.ApiResponse;
 import com.lovedev.notification.model.dto.response.NotificationResponse;
 import com.lovedev.notification.model.dto.response.NotificationSettingsResponse;
 import com.lovedev.notification.model.dto.response.PageResponse;
-import com.lovedev.notification.model.entity.NotificationSettings;
 import com.lovedev.notification.service.FCMService;
 import com.lovedev.notification.service.NotificationService;
 import io.swagger.v3.oas.annotations.Operation;
