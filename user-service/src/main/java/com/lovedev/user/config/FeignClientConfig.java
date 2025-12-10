@@ -1,9 +1,8 @@
 package com.lovedev.user.config;
 
-import com.lovedev.user.security.JwtTokenProvider;
+import com.lovedev.common.security.jwt.JwtTokenProvider;
 import feign.RequestInterceptor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration

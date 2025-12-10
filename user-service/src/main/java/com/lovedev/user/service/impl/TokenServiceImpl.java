@@ -4,7 +4,7 @@ import com.lovedev.user.exception.TokenException;
 import com.lovedev.user.model.entity.RefreshToken;
 import com.lovedev.user.model.entity.User;
 import com.lovedev.user.repository.RefreshTokenRepository;
-import com.lovedev.user.security.JwtTokenProvider;
+import com.lovedev.common.security.jwt.JwtTokenProvider;
 import com.lovedev.user.service.TokenService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

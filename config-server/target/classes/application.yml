@@ -15,8 +15,8 @@ spring:
           uri: https://github.com/Socheat-Hun/lovedev_api_config_server
           username: ${GIT_USERNAME:Socheat-Hun}
           password: ${GIT_PASSWORD:github_pat_11AOGDQ7Q0KAAhiHXvobta}
-          default-label: main
-          clone-on-start: true
+#          default-label: main
+#          clone-on-start: true
 
 management:
   endpoints:

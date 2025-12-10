@@ -16,7 +16,7 @@ import com.lovedev.user.repository.UserRepository;
 import com.lovedev.user.service.AuditService;
 import com.lovedev.user.service.FileStorageService;
 import com.lovedev.user.service.UserService;
-import com.lovedev.user.util.SecurityHelper;
+import com.lovedev.common.security.util.SecurityHelper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;

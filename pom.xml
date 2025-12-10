@@ -35,6 +35,7 @@
     <modules>
         <module>config-server</module>
         <module>eureka-server</module>
+        <module>common-lib/security-starter</module>
         <module>api-gateway</module>
         <module>user-service</module>
         <module>notification-service</module>

@@ -17,7 +17,7 @@ import com.lovedev.user.model.enums.UserStatus;
 import com.lovedev.user.repository.RoleRepository;
 import com.lovedev.user.repository.UserRepository;
 import com.lovedev.user.security.CustomUserDetails;
-import com.lovedev.user.security.JwtTokenProvider;
+import com.lovedev.common.security.jwt.JwtTokenProvider;
 import com.lovedev.user.service.AuditService;
 import com.lovedev.user.service.AuthService;
 import com.lovedev.user.service.TokenService;

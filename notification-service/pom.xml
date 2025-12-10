@@ -137,6 +137,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.lovedev.common</groupId>
+            <artifactId>security-starter</artifactId>
+            <version>1.0.8</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -194,4 +201,12 @@
             </plugin>
         </plugins>
     </build>
+    <!-- Distribution Management for GitHub Packages -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/Socheat-Hun/lovedev_api_v2</url>
+        </repository>
+    </distributionManagement>
 </project>
