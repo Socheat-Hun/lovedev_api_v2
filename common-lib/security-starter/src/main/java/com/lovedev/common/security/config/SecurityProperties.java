@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * Security configuration properties
  */
-@ConfigurationProperties(prefix = "app.security")
+@ConfigurationProperties(prefix = "app")
 @Data
 public class SecurityProperties {
 
