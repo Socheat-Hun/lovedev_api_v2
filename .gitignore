@@ -2,5 +2,4 @@
 /api-gateway/target/
 /eureka-server/target/
 
-.env
-*.env
+/config-server/.env
