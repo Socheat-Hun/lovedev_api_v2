@@ -21,16 +21,25 @@ import java.util.Arrays;
 @AutoConfiguration
 @EnableConfigurationProperties(SecurityProperties.class)
 @ConditionalOnProperty(
-        prefix = "app.security",
+        prefix = "app",
         name = "enabled",
         havingValue = "true",
         matchIfMissing = true
 )
 @Slf4j
 public class SecurityAutoConfiguration {
+    private final SecurityProperties securityProperties;
 
-    public SecurityAutoConfiguration() {
+    public SecurityAutoConfiguration(SecurityProperties securityProperties) {
+        this.securityProperties = securityProperties;
         log.info("🔐 LoveDev Security Starter Auto-Configuration Enabled");
+        // Validate JWT secret is provided
+        if (securityProperties.getJwt().getSecret() == null ||
+                securityProperties.getJwt().getSecret().isEmpty()) {
+            throw new IllegalStateException(
+                    "JWT secret is required. Please set 'app.security.jwt.secret' in your application.yml"
+            );
+        }
     }
 
     /**
@@ -68,24 +77,32 @@ public class SecurityAutoConfiguration {
     }
 
     /**
-     * CORS Configuration Source Bean
+     * Create CORS configuration source
+     * Configures Cross-Origin Resource Sharing settings
+     *
+     * @return CorsConfigurationSource instance
      */
     @Bean
-    @ConditionalOnMissingBean(name = "corsConfigurationSource")
-    public CorsConfigurationSource corsConfigurationSource(SecurityProperties properties) {
-        log.info("🌐 Configuring CORS");
+    @ConditionalOnMissingBean
+    public CorsConfigurationSource corsConfigurationSource() {
+        SecurityProperties.CorsProperties cors = securityProperties.getCors();
 
-        SecurityProperties.CorsProperties cors = properties.getCors();
+        if (cors.getAllowedOrigins() == null || Arrays.asList(cors.getAllowedOrigins()).isEmpty()) {
+            log.warn("No CORS allowed origins configured. CORS will be disabled.");
+            return request -> null;
+        }
 
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(Arrays.asList(cors.getAllowedOrigins()));
         configuration.setAllowedMethods(Arrays.asList(cors.getAllowedMethods()));
-        configuration.addAllowedHeader(cors.getAllowedHeaders());
+        configuration.setAllowedHeaders(Arrays.asList(cors.getAllowedHeaders()));
         configuration.setAllowCredentials(cors.getAllowCredentials());
         configuration.setMaxAge(cors.getMaxAge());
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
+
+        log.info("CORS configuration created with allowed origins: {}", cors.getAllowedOrigins());
 
         return source;
     }

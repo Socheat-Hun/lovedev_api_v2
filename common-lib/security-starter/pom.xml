@@ -14,7 +14,7 @@
 
     <groupId>com.lovedev.common</groupId>
     <artifactId>security-starter</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <name>LoveDev Security Starter</name>
     <description>Common security configuration for LoveDev microservices</description>
 
