@@ -87,6 +87,20 @@ public class SecurityAutoConfiguration {
     public CorsConfigurationSource corsConfigurationSource() {
         SecurityProperties.CorsProperties cors = securityProperties.getCors();
 
+        // ✅ Add these FIRST
+        System.out.println("===== CORS BEAN CREATION STARTED =====");
+        System.out.println("CORS object: " + cors);
+        System.out.println("CORS allowedOrigins: " + cors.getAllowedOrigins());
+        System.out.println("Is null? " + (cors.getAllowedOrigins() == null));
+        System.out.println("Is empty? " + (cors.getAllowedOrigins() != null && Arrays.asList(cors.getAllowedOrigins()).isEmpty()));
+
+        if (cors.getAllowedOrigins() == null || Arrays.asList(cors.getAllowedOrigins()).isEmpty()) {
+            log.warn("No CORS allowed origins configured. CORS will be disabled.");
+            return request -> null;
+        }
+
+        System.out.println("::::: Creating CORS with origins: " + Arrays.toString(cors.getAllowedOrigins()));
+
         if (cors.getAllowedOrigins() == null || Arrays.asList(cors.getAllowedOrigins()).isEmpty()) {
             log.warn("No CORS allowed origins configured. CORS will be disabled.");
             return request -> null;
