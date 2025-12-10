@@ -92,6 +92,7 @@ public class SecurityAutoConfiguration {
             return request -> null;
         }
 
+        System.out.printf("::::: >> "+cors.getAllowedOrigins());
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(Arrays.asList(cors.getAllowedOrigins()));
         configuration.setAllowedMethods(Arrays.asList(cors.getAllowedMethods()));
