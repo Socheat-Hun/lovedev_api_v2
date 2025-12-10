@@ -1,3 +1,6 @@
 # Project exclude paths
 /api-gateway/target/
 /eureka-server/target/
+
+.env
+*.env
