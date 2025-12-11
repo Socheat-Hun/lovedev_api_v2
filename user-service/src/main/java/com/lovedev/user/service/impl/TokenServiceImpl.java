@@ -1,6 +1,6 @@
 package com.lovedev.user.service.impl;
 
-import com.lovedev.user.exception.TokenException;
+import com.lovedev.common.web.exception.BadRequestException;
 import com.lovedev.user.model.entity.RefreshToken;
 import com.lovedev.user.model.entity.User;
 import com.lovedev.user.repository.RefreshTokenRepository;
@@ -41,10 +41,10 @@ public class TokenServiceImpl implements TokenService {
     @Transactional(readOnly = true)
     public RefreshToken verifyRefreshToken(String token) {
         RefreshToken refreshToken = refreshTokenRepository.findByToken(token)
-                .orElseThrow(() -> new TokenException("Invalid refresh token"));
+                .orElseThrow(() -> new BadRequestException("Invalid refresh token"));
 
         if (!refreshToken.isValid()) {
-            throw new TokenException("Refresh token is expired or revoked");
+            throw new BadRequestException("Refresh token is expired or revoked");
         }
 
         return refreshToken;

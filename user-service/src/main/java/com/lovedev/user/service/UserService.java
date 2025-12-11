@@ -1,7 +1,7 @@
 package com.lovedev.user.service;
 
 import com.lovedev.user.model.dto.request.*;
-import com.lovedev.user.model.dto.response.PageResponse;
+import com.lovedev.common.web.dto.PageResponse;
 import com.lovedev.user.model.dto.response.UserResponse;
 import org.springframework.web.multipart.MultipartFile;
 

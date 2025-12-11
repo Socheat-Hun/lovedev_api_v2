@@ -1,11 +1,12 @@
 package com.lovedev.user.service.impl;
 
-import com.lovedev.user.exception.BadRequestException;
-import com.lovedev.user.exception.ResourceNotFoundException;
-import com.lovedev.user.exception.UnauthorizedException;
+import com.lovedev.common.web.exception.BadRequestException;
+import com.lovedev.common.web.exception.ResourceNotFoundException;
+import com.lovedev.common.web.exception.UnauthorizedException;
+import com.lovedev.common.web.util.PaginationUtils;
 import com.lovedev.user.mapper.UserMapper;
 import com.lovedev.user.model.dto.request.*;
-import com.lovedev.user.model.dto.response.PageResponse;
+import com.lovedev.common.web.dto.PageResponse;
 import com.lovedev.user.model.dto.response.UserResponse;
 import com.lovedev.user.model.entity.Role;
 import com.lovedev.user.model.entity.User;
@@ -139,7 +140,7 @@ public class UserServiceImpl implements UserService {
                 ? Sort.by(sortBy).descending()
                 : Sort.by(sortBy).ascending();
 
-        Pageable pageable = PageRequest.of(page, size, sort);
+        Pageable pageable = PaginationUtils.createPageable(page, size, sortBy, sortDir);
 
         String keyword = searchRequest.getKeyword();
         if (keyword != null && !keyword.isEmpty()) {
@@ -169,20 +170,7 @@ public class UserServiceImpl implements UserService {
             );
         }
 
-        List<UserResponse> userResponses = userMapper.toResponseList(userPage.getContent());
-
-        return PageResponse.<UserResponse>builder()
-                .content(userResponses)
-                .pageNumber(userPage.getNumber())
-                .pageSize(userPage.getSize())
-                .totalElements(userPage.getTotalElements())
-                .totalPages(userPage.getTotalPages())
-                .last(userPage.isLast())
-                .first(userPage.isFirst())
-                .empty(userPage.isEmpty())
-                .hasNext(userPage.hasNext())
-                .hasPrevious(userPage.hasPrevious())
-                .build();
+        return PageResponse.of(userPage, userMapper::toResponse);
     }
 
     @Transactional

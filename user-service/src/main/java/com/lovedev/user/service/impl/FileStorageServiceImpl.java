@@ -1,6 +1,6 @@
 package com.lovedev.user.service.impl;
 
-import com.lovedev.user.exception.ResourceNotFoundException;
+import com.lovedev.common.web.exception.ResourceNotFoundException;
 import com.lovedev.user.model.dto.response.StorageStats;
 import com.lovedev.user.service.FileStorageService;
 import com.lovedev.user.util.FileUtil;

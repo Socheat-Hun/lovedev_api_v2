@@ -2,7 +2,7 @@ package com.lovedev.notification.service.impl;
 
 import com.google.firebase.messaging.*;
 import com.lovedev.notification.client.UserServiceClient;
-import com.lovedev.notification.exception.UnauthorizedException;
+import com.lovedev.common.web.exception.ResourceNotFoundException;
 import com.lovedev.notification.model.dto.request.FCMTokenRequest;
 import com.lovedev.notification.model.dto.request.NotificationSettingsRequest;
 import com.lovedev.notification.model.dto.request.SendBulkNotificationRequest;
@@ -47,7 +47,7 @@ public class FCMServiceImpl implements FCMService {
         try {
             return UUID.fromString(authentication.getName());
         } catch (IllegalArgumentException e) {
-            throw new UnauthorizedException("Invalid user authentication");
+            throw new ResourceNotFoundException("Invalid user authentication");
         }
     }
 

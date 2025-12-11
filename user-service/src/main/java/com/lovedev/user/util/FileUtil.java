@@ -1,6 +1,6 @@
 package com.lovedev.user.util;
 
-import com.lovedev.user.exception.FileStorageException;
+import com.lovedev.common.web.exception.BadRequestException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -41,7 +41,7 @@ public class FileUtil {
             Files.createDirectories(this.fileStorageLocation);
             log.info("File storage location created/verified: {}", this.fileStorageLocation);
         } catch (Exception ex) {
-            throw new FileStorageException("Could not create the directory where the uploaded files will be stored.", ex);
+            throw new BadRequestException("Could not create the directory where the uploaded files will be stored.", ex);
         }
     }
 
@@ -65,7 +65,7 @@ public class FileUtil {
         try {
             // Check if filename contains invalid characters
             if (originalFileName.contains("..")) {
-                throw new FileStorageException("Filename contains invalid path sequence: " + originalFileName);
+                throw new BadRequestException("Filename contains invalid path sequence: " + originalFileName);
             }
 
             // Generate unique filename
@@ -95,7 +95,7 @@ public class FileUtil {
                     : newFileName;
 
         } catch (IOException ex) {
-            throw new FileStorageException("Could not store file " + originalFileName + ". Please try again!", ex);
+            throw new BadRequestException("Could not store file " + originalFileName + ". Please try again!", ex);
         }
     }
 
@@ -139,12 +139,12 @@ public class FileUtil {
     private void validateFile(MultipartFile file) {
         // Check if file is empty
         if (file.isEmpty()) {
-            throw new FileStorageException("Failed to store empty file");
+            throw new BadRequestException("Failed to store empty file");
         }
 
         // Check file size
         if (file.getSize() > maxFileSize) {
-            throw new FileStorageException(
+            throw new BadRequestException(
                     String.format("File size exceeds maximum limit of %d bytes", maxFileSize)
             );
         }
@@ -154,7 +154,7 @@ public class FileUtil {
         String extension = getFileExtension(originalFileName);
 
         if (!isAllowedExtension(extension)) {
-            throw new FileStorageException(
+            throw new BadRequestException(
                     String.format("File type .%s is not allowed. Allowed types: %s",
                             extension, allowedExtensions)
             );
@@ -163,7 +163,7 @@ public class FileUtil {
         // Check content type
         String contentType = file.getContentType();
         if (contentType == null || !isAllowedContentType(contentType)) {
-            throw new FileStorageException("Invalid file content type: " + contentType);
+            throw new BadRequestException("Invalid file content type: " + contentType);
         }
     }
 

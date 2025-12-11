@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/user-service/common-lib/pom.xml" />
         <option value="$PROJECT_DIR$/common-lib/pom.xml" />
         <option value="$PROJECT_DIR$/common-lib/security-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/common-lib/web-starter/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

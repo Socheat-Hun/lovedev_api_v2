@@ -1,6 +1,6 @@
 package com.lovedev.user.controller;
 
-import com.lovedev.user.model.dto.response.ApiResponse;
+import com.lovedev.common.web.dto.ApiResponse;
 import com.lovedev.user.model.dto.response.OAuth2AuthResult;
 import com.lovedev.user.service.OAuth2Service;
 import io.swagger.v3.oas.annotations.Operation;

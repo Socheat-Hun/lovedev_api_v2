@@ -1,9 +1,8 @@
 package com.lovedev.user.service.impl;
 
-import com.lovedev.user.exception.BadRequestException;
-import com.lovedev.user.exception.EmailAlreadyExistsException;
-import com.lovedev.user.exception.ResourceNotFoundException;
-import com.lovedev.user.exception.TokenException;
+import com.lovedev.common.web.exception.BadRequestException;
+import com.lovedev.common.web.exception.ConflictException;
+import com.lovedev.common.web.exception.ResourceNotFoundException;
 import com.lovedev.user.kafka.UserEventProducer;
 import com.lovedev.user.mapper.UserMapper;
 import com.lovedev.user.model.dto.request.*;
@@ -54,7 +53,7 @@ public class AuthServiceImpl implements AuthService {
     public AuthResponse register(RegisterRequest request) {
         // Check if email already exists
         if (userRepository.existsByEmail(request.getEmail())) {
-            throw new EmailAlreadyExistsException("Email already registered: " + request.getEmail());
+            throw new ConflictException("Email already registered: " + request.getEmail());
         }
 
         // Get USER role (default role for new users)
@@ -100,10 +99,10 @@ public class AuthServiceImpl implements AuthService {
     @Transactional
     public void verifyEmail(String token) {
         User user = userRepository.findByEmailVerificationToken(token)
-                .orElseThrow(() -> new TokenException("Invalid verification token"));
+                .orElseThrow(() -> new BadRequestException("Invalid verification token"));
 
         if (user.getEmailVerificationExpiresAt().isBefore(LocalDateTime.now())) {
-            throw new TokenException("Verification token has expired");
+            throw new BadRequestException("Verification token has expired");
         }
 
         if (user.getEmailVerified()) {
@@ -227,10 +226,10 @@ public class AuthServiceImpl implements AuthService {
     @Transactional
     public void resetPassword(ResetPasswordRequest request) {
         User user = userRepository.findByPasswordResetToken(request.getToken())
-                .orElseThrow(() -> new TokenException("Invalid password reset token"));
+                .orElseThrow(() -> new BadRequestException("Invalid password reset token"));
 
         if (user.getPasswordResetExpiresAt().isBefore(LocalDateTime.now())) {
-            throw new TokenException("Password reset token has expired");
+            throw new BadRequestException("Password reset token has expired");
         }
 
         user.setPassword(passwordEncoder.encode(request.getNewPassword()));

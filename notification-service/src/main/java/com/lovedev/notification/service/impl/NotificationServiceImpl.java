@@ -1,17 +1,16 @@
 package com.lovedev.notification.service.impl;
 
+import com.lovedev.common.web.util.PaginationUtils;
 import com.lovedev.notification.client.UserServiceClient;
-import com.lovedev.notification.exception.ResourceNotFoundException;
-import com.lovedev.notification.exception.UnauthorizedException;
+import com.lovedev.common.web.exception.ResourceNotFoundException;
 import com.lovedev.notification.mapper.NotificationMapper;
 import com.lovedev.notification.model.dto.response.NotificationResponse;
-import com.lovedev.notification.model.dto.response.PageResponse;
+import com.lovedev.common.web.dto.PageResponse;
 import com.lovedev.notification.model.entity.Notification;
 import com.lovedev.notification.model.enums.NotificationStatus;
 import com.lovedev.notification.model.enums.NotificationType;
 import com.lovedev.notification.repository.NotificationRepository;
 import com.lovedev.notification.service.NotificationService;
-//import com.lovedev.notification.util.SecurityUtils;
 import com.lovedev.common.security.util.SecurityHelper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +23,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.Authentication;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -48,7 +46,7 @@ public class NotificationServiceImpl implements NotificationService {
         try {
             return SecurityHelper.getCurrentUserId();
         } catch (IllegalArgumentException e) {
-            throw new UnauthorizedException("Invalid user authentication");
+            throw new ResourceNotFoundException("Invalid user authentication");
         }
     }
 
@@ -56,7 +54,7 @@ public class NotificationServiceImpl implements NotificationService {
     public PageResponse<NotificationResponse> getUserNotifications(int page, int size, String status) {
         UUID userId = getCurrentUserId();
 
-        Pageable pageable = PageRequest.of(page, size);
+        Pageable pageable = PaginationUtils.createPageable(page, size);
         Page<Notification> notificationPage;
 
         if (status != null && !status.isEmpty()) {
@@ -66,20 +64,13 @@ public class NotificationServiceImpl implements NotificationService {
             notificationPage = notificationRepository.findByUserIdOrderByCreatedAtDesc(userId, pageable);
         }
 
+     /*   List<NotificationResponse> responses = notificationMapper.toResponseList(notificationPage.getContent());
         List<NotificationResponse> responses = notificationMapper.toResponseList(notificationPage.getContent());
-
-        return PageResponse.<NotificationResponse>builder()
+        return PageResponse.of(notificationPage).toBuilder()
                 .content(responses)
-                .pageNumber(notificationPage.getNumber())
-                .pageSize(notificationPage.getSize())
-                .totalElements(notificationPage.getTotalElements())
-                .totalPages(notificationPage.getTotalPages())
-                .last(notificationPage.isLast())
-                .first(notificationPage.isFirst())
-                .empty(notificationPage.isEmpty())
-                .hasNext(notificationPage.hasNext())
-                .hasPrevious(notificationPage.hasPrevious())
-                .build();
+                .build();*/
+
+        return PageResponse.of(notificationPage, notificationMapper::toResponse);
     }
 
     @Transactional
@@ -89,7 +80,7 @@ public class NotificationServiceImpl implements NotificationService {
                 .orElseThrow(() -> new ResourceNotFoundException("Notification not found"));
 
         if (!notification.getUserId().equals(userId)) {
-            throw new UnauthorizedException("You don't have permission to access this notification");
+            throw new ResourceNotFoundException("You don't have permission to access this notification");
         }
 
         notification.markAsRead();
@@ -113,7 +104,7 @@ public class NotificationServiceImpl implements NotificationService {
                 .orElseThrow(() -> new ResourceNotFoundException("Notification not found"));
 
         if (!notification.getUserId().equals(userId)) {
-            throw new UnauthorizedException("You don't have permission to delete this notification");
+            throw new ResourceNotFoundException("You don't have permission to delete this notification");
         }
 
         notificationRepository.delete(notification);

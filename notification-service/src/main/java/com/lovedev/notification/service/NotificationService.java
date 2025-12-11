@@ -1,7 +1,7 @@
 package com.lovedev.notification.service;
 
 import com.lovedev.notification.model.dto.response.NotificationResponse;
-import com.lovedev.notification.model.dto.response.PageResponse;
+import com.lovedev.common.web.dto.PageResponse;
 
 import java.util.UUID;
 

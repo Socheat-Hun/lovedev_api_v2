@@ -1,6 +1,6 @@
 package com.lovedev.user.security;
 
-import com.lovedev.user.exception.ResourceNotFoundException;
+import com.lovedev.common.web.exception.ResourceNotFoundException;
 import com.lovedev.user.model.entity.User;
 import com.lovedev.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

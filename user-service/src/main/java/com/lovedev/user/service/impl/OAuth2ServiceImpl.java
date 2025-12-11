@@ -1,7 +1,7 @@
 package com.lovedev.user.service.impl;
 
-import com.lovedev.user.exception.BadRequestException;
-import com.lovedev.user.exception.ResourceNotFoundException;
+import com.lovedev.common.web.exception.BadRequestException;
+import com.lovedev.common.web.exception.ResourceNotFoundException;
 import com.lovedev.user.model.dto.response.OAuth2AuthResult;
 import com.lovedev.user.model.entity.RefreshToken;
 import com.lovedev.user.model.entity.Role;

@@ -1,7 +1,7 @@
 package com.lovedev.user.controller;
 
 import com.lovedev.user.model.dto.request.*;
-import com.lovedev.user.model.dto.response.ApiResponse;
+import com.lovedev.common.web.dto.ApiResponse;
 import com.lovedev.user.model.dto.response.AuthResponse;
 import com.lovedev.user.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
