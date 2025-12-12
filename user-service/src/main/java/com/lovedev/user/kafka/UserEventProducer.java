@@ -1,14 +1,11 @@
 package com.lovedev.user.kafka;
 
+import com.lovedev.common.messaging.constant.KafkaTopics;
 import com.lovedev.user.model.dto.request.UserEventRequest;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.kafka.support.SendResult;
-import org.springframework.messaging.Message;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -18,49 +15,53 @@ import java.util.concurrent.CompletableFuture;
 /**
  * Kafka Producer for User Events
  * Publishes user-related events to Kafka topics
+ *
+ * Updated to use messaging-starter infrastructure
  */
 @Service
+@RequiredArgsConstructor
+@Slf4j
 public class UserEventProducer {
 
-    private static final Logger log = LoggerFactory.getLogger(UserEventProducer.class);
-
-    private final KafkaTemplate<String, Object> kafkaTemplate;
-
-    @Value("${kafka.topics.email-verify:email.verify}")
-    private String emailVerifyTopic;
-
-    @Value("${kafka.topics.email-welcome:email.welcome")
-    private String emailWelcomeTopic;
-
-    @Value("${kafka.topics.email-reset-password:email.reset.password}")
-    private String emailResetPasswordTopic;
-
-    public UserEventProducer(KafkaTemplate<String, Object> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
+    private final KafkaTemplate<String, Object> kafkaTemplate;  // ✅ From messaging-starter
 
     /**
      * Publish user verify email event
      */
     public void publishUserVerifyEmail(UUID userId, Map<String, Object> userData) {
-        UserEventRequest event = new UserEventRequest(userId, "USER_VERIFY_EMAIL", userData);
-        publishEvent(emailVerifyTopic, userId.toString() , event);
+        UserEventRequest event = UserEventRequest.builder()
+                .userId(userId)
+                .eventType("USER_VERIFY_EMAIL")
+                .data(userData)
+                .build();
+
+        publishEvent(KafkaTopics.EMAIL_VERIFY, userId.toString(), event);  // ✅ Use constant
     }
 
     /**
      * Publish user welcome email event
      */
     public void publishUserWelcomeEmail(UUID userId, Map<String, Object> userData) {
-        UserEventRequest event = new UserEventRequest(userId, "USER_WELCOME_EMAIL", userData);
-        publishEvent(emailWelcomeTopic, userId.toString(), event);
+        UserEventRequest event = UserEventRequest.builder()
+                .userId(userId)
+                .eventType("USER_WELCOME_EMAIL")
+                .data(userData)
+                .build();
+
+        publishEvent(KafkaTopics.EMAIL_WELCOME, userId.toString(), event);  // ✅ Use constant
     }
 
     /**
      * Publish user reset password event
      */
     public void publishUserResetPassword(UUID userId, Map<String, Object> userData) {
-        UserEventRequest event = new UserEventRequest(userId, "USER_RESET_PASSWORD", userData);
-        publishEvent(emailResetPasswordTopic, userId.toString(), event);
+        UserEventRequest event = UserEventRequest.builder()
+                .userId(userId)
+                .eventType("USER_RESET_PASSWORD")
+                .data(userData)
+                .build();
+
+        publishEvent(KafkaTopics.EMAIL_RESET_PASSWORD, userId.toString(), event);  // ✅ Use constant
     }
 
     /**
@@ -68,24 +69,25 @@ public class UserEventProducer {
      */
     private void publishEvent(String topic, String key, UserEventRequest event) {
         try {
-            Message<UserEventRequest> message = MessageBuilder
-                    .withPayload(event)
-                    .setHeader(KafkaHeaders.TOPIC, topic)
-                    .setHeader(KafkaHeaders.KEY, key)
-                    .build();
+            log.info("Publishing event to topic: {} with key: {}, eventType: {}",
+                    topic, key, event.getEventType());
 
-            CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send(message);
-            
+            CompletableFuture<SendResult<String, Object>> future =
+                    kafkaTemplate.send(topic, key, event);  // ✅ Simple send
+
             future.whenComplete((result, ex) -> {
                 if (ex == null) {
-                    log.info("Published event to topic: {} with key: {} - Offset: {}", 
-                            topic, key, result.getRecordMetadata().offset());
+                    log.info("Successfully published event to topic: {} with key: {} - Partition: {}, Offset: {}",
+                            topic, key,
+                            result.getRecordMetadata().partition(),
+                            result.getRecordMetadata().offset());
                 } else {
                     log.error("Failed to publish event to topic: {} with key: {}", topic, key, ex);
                 }
             });
         } catch (Exception e) {
             log.error("Exception while publishing event to topic: {}", topic, e);
+            throw new RuntimeException("Failed to publish event", e);
         }
     }
 }

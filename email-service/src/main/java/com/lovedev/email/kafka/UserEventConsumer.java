@@ -1,5 +1,6 @@
 package com.lovedev.email.kafka;
 
+import com.lovedev.common.messaging.constant.KafkaTopics;  // ✅ Import from starter
 import com.lovedev.email.model.dto.request.UserEventRequest;
 import com.lovedev.email.service.EmailService;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,10 @@ import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
+/**
+ * Kafka Consumer for User Events
+ * Updated to use messaging-starter infrastructure
+ */
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -18,7 +23,10 @@ public class UserEventConsumer {
 
     private final EmailService emailService;
 
-    @KafkaListener(topics = "email.verify", groupId = "email-service-group")
+    @KafkaListener(
+            topics = KafkaTopics.EMAIL_VERIFY,
+            groupId = "email-service-group"
+    )
     public void handleVerifyEmail(
             @Payload UserEventRequest event,
             @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
@@ -32,7 +40,6 @@ public class UserEventConsumer {
         try {
             String email = (String) event.getData().get("email");
             String firstName = (String) event.getData().get("firstName");
-            // FIX: This was incorrectly getting "firstName" instead of the token
             String tokenVerify = (String) event.getData().get("verificationToken");
 
             if (email == null || firstName == null || tokenVerify == null) {
@@ -54,7 +61,10 @@ public class UserEventConsumer {
         }
     }
 
-    @KafkaListener(topics = "email.welcome", groupId = "email-service-group")
+    @KafkaListener(
+            topics = KafkaTopics.EMAIL_WELCOME,  // ✅ Use constant
+            groupId = "email-service-group"
+    )
     public void handleEmailWelcome(
             @Payload UserEventRequest event,
             @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
@@ -88,7 +98,10 @@ public class UserEventConsumer {
         }
     }
 
-    @KafkaListener(topics = "email.reset.password", groupId = "email-service-group")
+    @KafkaListener(
+            topics = KafkaTopics.EMAIL_RESET_PASSWORD,  // ✅ Use constant
+            groupId = "email-service-group"
+    )
     public void handleEmailResetPassword(
             @Payload UserEventRequest event,
             @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,

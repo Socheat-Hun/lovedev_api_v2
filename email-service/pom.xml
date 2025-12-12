@@ -137,6 +137,12 @@
             <version>1.0.8</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.lovedev.common</groupId>
+            <artifactId>messaging-starter</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
