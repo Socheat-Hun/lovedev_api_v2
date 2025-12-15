@@ -1,3 +1,6 @@
+server:
+  port: 8082
+
 spring:
   application:
     name: email-service
@@ -5,55 +8,10 @@ spring:
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
-  security:
-    user:
-      name: disabled
-      password: disabled
+  config:
+    import: "configserver:"
 
-  kafka:
-    bootstrap-servers: localhost:9092
-    consumer:
-      group-id: email-service-group
-      auto-offset-reset: latest
-      enable-auto-commit: false
-      # Use ErrorHandlingDeserializer to handle deserialization errors gracefully
-      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      properties:
-        spring.json.trusted.packages: "*"
-        spring.json.value.default.type: com.lovedev.email.model.dto.request.UserEventRequest
-        # Configure the actual deserializers as delegates
-        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
-        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
-
-  servlet:
-    multipart:
-      enabled: true
-      max-file-size: 5MB
-      max-request-size: 5MB
-
-app:
-  name: Email Service
-  version: 1.0.0
-
-springdoc:
-  api-docs:
-    enabled: true
-    path: /v3/api-docs
-  swagger-ui:
-    enabled: true
-    path: /swagger-ui.html
-
-server:
-  port: 8082
-
-# Service URLs for inter-service communication
-services:
-  user-service:
-    url: ${USER_SERVICE_URL:http://localhost:8081}
-  notification-service:
-    url: ${NOTIFICATION_SERVICE_URL:http://localhost:8083}
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true

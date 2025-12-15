@@ -128,9 +128,9 @@ public class KafkaAutoConfiguration {
 
         DefaultKafkaConsumerFactory<String, Object> factory = new DefaultKafkaConsumerFactory<>(config);
 
-        JsonDeserializer<Object> jsonDeserializer = new JsonDeserializer<>(kafkaObjectMapper);
-        jsonDeserializer.addTrustedPackages("com.lovedev.common.messaging.event");
-        factory.setValueDeserializer(new ErrorHandlingDeserializer<>(jsonDeserializer));
+//        JsonDeserializer<Object> jsonDeserializer = new JsonDeserializer<>(kafkaObjectMapper);
+//        jsonDeserializer.addTrustedPackages("com.lovedev.common.messaging.event");
+//        factory.setValueDeserializer(new ErrorHandlingDeserializer<>(jsonDeserializer));
 
         return factory;
     }
